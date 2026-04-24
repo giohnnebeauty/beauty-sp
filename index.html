@@ -186,7 +186,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:22px 2
 </head>
 <body>
 
-<div class="lov" id="lov"><div class="spin"></div><div class="ltxt" id="ltxt">Processando compatibilidade de formulações...</div></div>
+<div class="lov" id="lov"><div class="spin"></div><div class="ltxt" id="ltxt">Verificando compatibilidade de formulações... 🔬</div></div>
 <div class="toast" id="toast"></div>
 
 <header>
@@ -195,12 +195,12 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:22px 2
 </header>
 
 <div class="hero">
-  <div class="hero-pill">Análise baseada em química cosmética</div>
-  <h1>Compatibilidade real entre produtos. Resultados que fazem sentido para<br>a <span>sua pele</span></h1>
+  <div class="hero-pill">✨ Análise baseada em química cosmética</div>
+  <h1>Menos tentativa e erro.<br><span>Mais ciência</span> na sua rotina.</h1>
   <p>Verifique a compatibilidade físico-química entre seus produtos de skincare, maquiagem e cuidados capilares — com base técnica, em segundos.</p>
   <div class="stats">
     <div><span class="stat-n">500+</span><span class="stat-l">Marcas BR</span></div>
-    <div><span class="stat-n">IA</span><span class="stat-l">Análise Real</span></div>
+    <div><span class="stat-n">Técnico</span><span class="stat-l">Base Científica</span></div>
     <div><span class="stat-n">Grátis</span><span class="stat-l">Para sempre</span></div>
   </div>
 </div>
@@ -229,7 +229,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:22px 2
       <div id="sel1" style="display:none"></div>
     </div>
 
-    <div class="div">➕ combina com</div>
+    <div class="div">➕ é compatível com</div>
 
     <div id="grp2">
       <label class="il">Produto 2</label>
@@ -245,7 +245,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:22px 2
   <button class="btn" id="btnck" onclick="check()" disabled>
     <span>✨</span> Verificar Compatibilidade
   </button>
-  <div style="text-align:center;margin-top:10px;font-size:.72rem;color:var(--muted)">🔒 Análise por IA especializada em cosméticos · Gratuita</div>
+  <div style="text-align:center;margin-top:10px;font-size:.72rem;color:var(--muted)">🔒 Verificação técnica de compatibilidade galénica · Gratuita</div>
 </div>
 
 <!-- RESULT -->
@@ -253,12 +253,12 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:22px 2
   <div class="rhead">
     <div class="remoji" id="remoji">✨</div>
     <div>
-      <div class="rtit" id="rtit">Análise de Compatibilidade</div>
+      <div class="rtit" id="rtit">Laudo de Compatibilidade Cosmética</div>
       <span class="rbadge" id="rbadge">—</span>
     </div>
   </div>
   <div class="meter">
-    <div class="mrow"><span class="mlbl">Índice de Compatibilidade</span><span class="mpct" id="mpct">0%</span></div>
+    <div class="mrow"><span class="mlbl">Índice de Compatibilidade Galénica</span><span class="mpct" id="mpct">0%</span></div>
     <div class="mbar"><div class="mfill" id="mfill"></div></div>
   </div>
   <div class="rsec" id="rsec"></div>
@@ -272,25 +272,25 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:22px 2
 <!-- FEATURES -->
 <div class="sec-label" style="margin-top:4px">Recursos Exclusivos</div>
 <div class="fgrid">
-  <div class="fc fc-hot" onclick="toast2('🎯 Quiz de Pele — Em breve! Seja avisada pelo e-mail.')">
+  <div class="fc fc-hot" onclick="toast2('🎯 Diagnóstico de Biotipo Cutâneo — Em breve! Cadastre seu e-mail para ser avisada.')">
     <div class="fi">🎯</div>
-    <div class="fn">Quiz de Pele <span class="hot-tag">NEW</span></div>
-    <div class="fd">Descubra seu tipo exato</div>
+    <div class="fn">Diagnóstico de Biotipo <span class="hot-tag">NEW</span></div>
+    <div class="fd">Identifique seu biotipo e necessidades específicas</div>
   </div>
-  <div class="fc" onclick="toast2('🌀 Modo Cacheada — Em breve! Rotina especial para cachos e crespos.')">
+  <div class="fc" onclick="toast2('🌀 Protocolo Cachos & Crespos — Em breve! Rotina técnica para fios com curvatura.')">
     <div class="fi">🌀</div>
-    <div class="fn">Modo Cacheada</div>
-    <div class="fd">Rotina para cachos e crespos</div>
+    <div class="fn">Protocolo Cachos & Crespos</div>
+    <div class="fd">Rotina técnica para fios com curvatura — baixa a alta porosidade</div>
   </div>
-  <div class="fc" onclick="toast2('📋 Minha Rotina — Em breve! Salve seus produtos favoritos.')">
+  <div class="fc" onclick="toast2('📋 Meu Protocolo de Cuidados — Em breve! Salve e organize seus produtos favoritos.')">
     <div class="fi">📋</div>
-    <div class="fn">Minha Rotina</div>
-    <div class="fd">Monte seu ritual de beleza</div>
+    <div class="fn">Meu Protocolo de Cuidados</div>
+    <div class="fd">Organize sua rotina por etapas e verifique a compatibilidade entre todos os produtos</div>
   </div>
-  <div class="fc" onclick="toast2('🛡️ Check ANVISA — Em breve! Veja se ingredientes são aprovados no Brasil.')">
+  <div class="fc" onclick="toast2('🛡️ Verificação Regulatória ANVISA — Em breve! Consulte se o produto está regularizado conforme a legislação brasileira.')">
     <div class="fi">🛡️</div>
-    <div class="fn">Check ANVISA</div>
-    <div class="fd">Segurança regulatória BR</div>
+    <div class="fn">Verificação Regulatória ANVISA</div>
+    <div class="fd">Conformidade com a legislação cosmética brasileira</div>
   </div>
 </div>
 
@@ -302,7 +302,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:22px 2
     <div style="font-size:2.4rem">🧴</div>
     <div style="flex:1">
       <div style="font-weight:700;font-size:.92rem;margin-bottom:3px">Hydro Boost Neutrogena</div>
-      <div style="font-size:.75rem;color:var(--muted);margin-bottom:9px">Compatível com 94% das bases do mercado</div>
+      <div style="font-size:.75rem;color:var(--muted);margin-bottom:9px">Índice de compatibilidade de 94% com as principais bases do mercado</div>
       <div style="display:flex;align-items:center;gap:8px">
         <span style="font-weight:700;color:var(--primary)">R$ 49,90</span>
         <a href="https://www.amazon.com.br/s?k=neutrogena+hydro+boost&tag=giohnne-20" target="_blank"
@@ -313,41 +313,41 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:22px 2
 </div>
 
 <!-- SUGESTOES -->
-<div class="sec-label">Produtos em Alta 🔥</div>
+<div class="sec-label">Produtos em Destaque 🔥</div>
 <div class="ps" id="ps"><!-- js --></div>
 
 <!-- RANKING -->
-<div class="sec-label" style="margin-top:20px">🏆 Combinações Mais Populares</div>
+<div class="sec-label" style="margin-top:20px">🏆 Pares de Alta Compatibilidade</div>
 <div id="rankList">
-  <div class="rank-item"><div class="rank-n">1</div><div style="flex:1"><div style="font-size:.85rem;font-weight:600">Sérum Vitamina C + Protetor Solar</div><div style="font-size:.72rem;color:var(--muted)">Skincare · 98% compatível</div><div class="rank-bar"><div class="rank-fill" style="width:98%"></div></div></div></div>
-  <div class="rank-item"><div class="rank-n">2</div><div style="flex:1"><div style="font-size:.85rem;font-weight:600">Primer + Base Mate</div><div style="font-size:.72rem;color:var(--muted)">Maquiagem · 96% compatível</div><div class="rank-bar"><div class="rank-fill" style="width:96%"></div></div></div></div>
-  <div class="rank-item"><div class="rank-n">3</div><div style="flex:1"><div style="font-size:.85rem;font-weight:600">Shampoo Low Poo + Leave-in Cachos</div><div style="font-size:.72rem;color:var(--muted)">Cabelos · 95% compatível</div><div class="rank-bar"><div class="rank-fill" style="width:95%"></div></div></div></div>
-  <div class="rank-item"><div class="rank-n">4</div><div style="flex:1"><div style="font-size:.85rem;font-weight:600">Niacinamida + Hidratante Levinho</div><div style="font-size:.72rem;color:var(--muted)">Skincare · 93% compatível</div><div class="rank-bar"><div class="rank-fill" style="width:93%"></div></div></div></div>
+  <div class="rank-item"><div class="rank-n">1</div><div style="flex:1"><div style="font-size:.85rem;font-weight:600">Sérum Vitamina C + Protetor Solar</div><div style="font-size:.72rem;color:var(--muted)">Skincare · 98% de compatibilidade</div><div class="rank-bar"><div class="rank-fill" style="width:98%"></div></div></div></div>
+  <div class="rank-item"><div class="rank-n">2</div><div style="flex:1"><div style="font-size:.85rem;font-weight:600">Primer + Base Mate</div><div style="font-size:.72rem;color:var(--muted)">Maquiagem · 96% de compatibilidade</div><div class="rank-bar"><div class="rank-fill" style="width:96%"></div></div></div></div>
+  <div class="rank-item"><div class="rank-n">3</div><div style="flex:1"><div style="font-size:.85rem;font-weight:600">Shampoo Low Poo + Leave-in Cachos</div><div style="font-size:.72rem;color:var(--muted)">Cabelos · 95% de compatibilidade</div><div class="rank-bar"><div class="rank-fill" style="width:95%"></div></div></div></div>
+  <div class="rank-item"><div class="rank-n">4</div><div style="flex:1"><div style="font-size:.85rem;font-weight:600">Niacinamida + Hidratante Levinho</div><div style="font-size:.72rem;color:var(--muted)">Skincare · 93% de compatibilidade</div><div class="rank-bar"><div class="rank-fill" style="width:93%"></div></div></div></div>
 </div>
 
 <!-- DICAS -->
-<div class="sec-label" style="margin-top:20px">🌿 Dicas de Especialista</div>
-<div class="tip"><div class="tii">⚠️</div><div><div class="tit">Retinol + Vitamina C = Não ao mesmo tempo!</div><div class="tid">Use Vitamina C de manhã e Retinol à noite. Combiná-los pode irritar e reduzir a eficácia de ambos.</div></div></div>
-<div class="tip"><div class="tii">💧</div><div><div class="tit">Niacinamida + Ácido Hialurônico = ❤️</div><div class="tid">Uma das melhores duplas para pele! Hidratam profundamente e se potencializam juntos. Qualquer tipo de pele.</div></div></div>
-<div class="tip"><div class="tii">🌀</div><div><div class="tit">Cronograma capilar: proteína vs hidratação</div><div class="tid">Nunca use dois produtos proteicos juntos. Alterne semanas: proteína → umectação → hidratação.</div></div></div>
-<div class="tip"><div class="tii">☀️</div><div><div class="tit">Protetor solar SEMPRE por último (skincare)</div><div class="tid">Aplique o protetor solar como última etapa da sua rotina da manhã, após hidratante e sérum.</div></div></div>
+<div class="sec-label" style="margin-top:20px">🌿 Orientações Técnicas de Formulação</div>
+<div class="tip"><div class="tii">⚠️</div><div><div class="tit">Retinol + Vitamina C: incompatibilidade de pH e oxidação</div><div class="tid">A Vitamina C exige pH ácido (2,5–3,5) e o Retinol é fotossensível. Usá-los simultaneamente compromete a estabilidade de ambos e aumenta o risco de irritação cutânea. Recomendação: Vitamina C na rotina matinal, Retinol na rotina noturna.</div></div></div>
+<div class="tip"><div class="tii">💧</div><div><div class="tit">Niacinamida + Ácido Hialurônico: sinergia de alta compatibilidade</div><div class="tid">Combinação de alta compatibilidade físico-química: a niacinamida regula a oleosidade e os poros enquanto o ácido hialurônico promove hidratação profunda, sem interação adversa entre os ativos. Indicada para todos os biotipos cutâneos.</div></div></div>
+<div class="tip"><div class="tii">🌀</div><div><div class="tit">Cronograma capilar: proteína versus hidratação</div><div class="tid">Nunca aplique dois produtos proteicos simultaneamente — pode causar sobrecarga de proteína nos fios. Alterne as etapas semanais: proteína → umectação → hidratação, respeitando a porosidade capilar.</div></div></div>
+<div class="tip"><div class="tii">☀️</div><div><div class="tit">Filtro solar: última etapa obrigatória da rotina matinal</div><div class="tid">O filtro solar deve ser aplicado após todos os outros produtos, pois sua eficácia fotoprotetora depende da formação de um filme contínuo sobre a pele. Aplicá-lo antes de outros produtos compromete o FPS declarado na embalagem.</div></div></div>
 
 <!-- IDÉIAS DE MONETIZAÇÃO -->
-<div class="sec-label" style="margin-top:20px">💰 Como o App Gera Receita (para você saber)</div>
+<div class="sec-label" style="margin-top:20px">💰 Transparência — como mantemos o GiohnneBeautyMatch gratuito</div>
 <div class="money-grid">
-  <div class="money-card"><div class="mc-icon">🔗</div><div class="mc-title">Links Afiliados</div><div class="mc-desc">Comissão em cada produto clicado (Amazon, Shopee, Magalu)</div></div>
-  <div class="money-card"><div class="mc-icon">⭐</div><div class="mc-title">Marca Parceira</div><div class="mc-desc">Marcas pagam para aparecer em destaque após análise</div></div>
-  <div class="money-card"><div class="mc-icon">👑</div><div class="mc-title">Plano Premium</div><div class="mc-desc">Rotina ilimitada, alertas e análise de pele avançada</div></div>
-  <div class="money-card"><div class="mc-icon">📦</div><div class="mc-title">Kit Curado</div><div class="mc-desc">Venda kits com produtos compatíveis selecionados pela IA</div></div>
+  <div class="money-card"><div class="mc-icon">🔗</div><div class="mc-title">Links Afiliados</div><div class="mc-desc">Recebemos comissão por indicação quando você realiza uma compra — sem custo adicional para você (Amazon, Shopee, Magalu)</div></div>
+  <div class="money-card"><div class="mc-icon">⭐</div><div class="mc-title">Marca Parceira</div><div class="mc-desc">Parcerias comerciais com marcas selecionadas — sempre identificadas como conteúdo patrocinado</div></div>
+  <div class="money-card"><div class="mc-icon">👑</div><div class="mc-title">Plano Premium</div><div class="mc-desc">Acesso completo a protocolos ilimitados, alertas de incompatibilidade e diagnóstico cutâneo avançado</div></div>
+  <div class="money-card"><div class="mc-icon">📦</div><div class="mc-title">Kit Curado</div><div class="mc-desc">Kits com produtos de alta compatibilidade, selecionados com base em parâmetros técnicos de formulação</div></div>
 </div>
 
 <!-- NEWSLETTER -->
 <div class="nl">
-  <h3>💌 Faça parte da comunidade!</h3>
-  <p>Receba análises exclusivas, dicas de ingredientes e as tendências de beleza do Brasil toda semana — de graça.</p>
+  <h3>💌 Receba conteúdo técnico de cosmetologia aplicada</h3>
+  <p>Toda semana: análises de compatibilidade, ingredientes em destaque e novidades do mercado cosmético brasileiro — sem custo.</p>
   <div class="nlf">
     <input type="email" class="nli" id="nlemail" placeholder="seu@email.com.br">
-    <button class="nlb" onclick="subscribe()">Entrar! 💄</button>
+    <button class="nlb" onclick="subscribe()">Quero receber →</button>
   </div>
 </div>
 
@@ -356,9 +356,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:22px 2
 <footer>
   <div class="fl">GiohnneBeautyMatch 🇧🇷</div>
   <div class="ft">
-    Desenvolvido para consumidoras e profissionais do mercado cosmético brasileiro · Análises baseadas em parâmetros técnicos de química cosmética.<br>
-    As informações disponibilizadas têm caráter educacional e não substituem avaliação dermatológica, tricológica ou de profissional habilitado.<br>
-    <span style="color:var(--primary)">🔗 Links marcados são afiliados e ajudam a manter o site gratuito</span>
+    Desenvolvido para consumidoras e profissionais do mercado cosmético brasileiro · Análises baseadas em parâmetros técnicos de química cosmética<br>
+    As informações disponibilizadas têm caráter educacional e não substituem avaliação dermatológica, tricológica ou de profissional habilitado<br>
+    <span style="color:var(--primary)">🔗 Links identificados são afiliados e contribuem para manter a plataforma gratuita</span>
   </div>
 </footer>
 
@@ -473,7 +473,7 @@ function ready(){
 }
 
 // ─── CHECK ───────────────────────────────────────────────────
-const loadMsgs=["Analisando fórmulas... 🔬","Consultando ingredientes... 🧪","Cruzando dados de compatibilidade... ✨","Quase lá, preparando seu resultado! 💄"];
+const loadMsgs=["Verificando compatibilidade de formulações... 🔬","Cruzando parâmetros de ingredientes... 🧪","Processando interações físico-químicas... ✨","Preparando seu laudo de compatibilidade... 💄"];
 let loadIdx=0, loadTimer;
 
 async function check(){
@@ -488,9 +488,9 @@ async function check(){
     document.getElementById('ltxt').textContent=loadMsgs[loadIdx];
   },2000);
 
-  const prompt=`Você é uma especialista em cosméticos, dermatologia e tricologia com 20 anos de experiência, especializada no mercado brasileiro.
+  const prompt=`Você é uma especialista em cosmetologia, dermatologia e tricologia com mais de 20 anos de experiência clínica e em formulação cosmética, especializada no mercado brasileiro.
 
-Analise a compatibilidade entre estes dois produtos de beleza:
+Realize a análise de compatibilidade físico-química entre os dois produtos cosméticos abaixo:
 
 **Produto 1:** ${p1.n} — ${p1.m} (${p1.sub})
 Ingredientes: ${p1.i.join(', ')}
@@ -498,20 +498,20 @@ Ingredientes: ${p1.i.join(', ')}
 **Produto 2:** ${p2.n} — ${p2.m} (${p2.sub})
 Ingredientes: ${p2.i.join(', ')}
 
-Considere: interação química dos ingredientes, pH, eficácia combinada, possíveis irritações, adequação ao clima brasileiro e tipos de pele/cabelo da mulher brasileira.
+Avalie: interação química dos ingredientes, compatibilidade de pH, estabilidade galénica, eficácia combinada, possíveis reações adversas cutâneas, adequação ao clima brasileiro e aos biotipos de pele e cabelo da mulher brasileira.
 
 Responda APENAS com JSON puro sem markdown nem explicações extras:
 {
   "percentual": 85,
   "classificacao": "Ótima Combinação",
-  "explicacao": "Explicação em português BR amigável e clara sobre a compatibilidade (2-3 frases)",
-  "dica": "Como usar os dois juntos para melhor resultado (1-2 frases práticas)",
-  "alerta": "Aviso importante se houver risco real, null se não houver",
+  "explicacao": "Análise técnica em português BR, clara e acessível sobre a compatibilidade (2-3 frases)",
+  "dica": "Protocolo de uso recomendado para melhor resultado (1-2 frases práticas)",
+  "alerta": "Aviso técnico importante se houver risco real, null se não houver",
   "melhor_momento": "Quando e como usar cada produto (manhã/noite/semana etc)",
-  "publico_ideal": "Para qual tipo de pele ou cabelo essa combinação é mais indicada"
+  "publico_ideal": "Para qual biotipo cutâneo ou capilar essa combinação é mais indicada"
 }
 
-Critério de percentual: 90-100=Perfeita combinação, 70-89=Boa combinação, 50-69=Use com moderação, 0-49=Evite combinar.`;
+Critério de índice: 90-100=Compatibilidade excelente, 70-89=Boa compatibilidade, 50-69=Use com moderação, 0-49=Evite combinar.`;
 
   try{
     const r=await fetch("https://api.anthropic.com/v1/messages",{
@@ -551,8 +551,8 @@ function showRes(r,p1,p2){
   document.getElementById('mpct').textContent=`${pct}%`;
   setTimeout(()=>document.getElementById('mfill').style.width=`${pct}%`,80);
 
-  let h=`<div class="rs rs-a"><div class="rst">📝 Análise</div>${r.explicacao}</div>
-         <div class="rs rs-d"><div class="rst">💡 Como usar juntos</div>${r.dica}</div>`;
+  let h=`<div class="rs rs-a"><div class="rst">📝 Análise Técnica</div>${r.explicacao}</div>
+         <div class="rs rs-d"><div class="rst">💡 Protocolo de Uso</div>${r.dica}</div>`;
   if(r.alerta) h+=`<div class="rs rs-w"><div class="rst">⚠️ Atenção</div>${r.alerta}</div>`;
   if(r.melhor_momento) h+=`<div class="rs rs-m"><div class="rst">⏰ Melhor momento</div>${r.melhor_momento}</div>`;
   if(r.publico_ideal) h+=`<div class="rs rs-p"><div class="rst">👤 Ideal para</div>${r.publico_ideal}</div>`;
@@ -589,7 +589,7 @@ function toast2(msg,ms=3200){
 function share(){
   if(!lastR)return;
   const{p1,p2,res}=lastR;
-  const txt=`✨ Testei a compatibilidade de "${p1.n}" + "${p2.n}" no GiohnneBeautyMatch Brasil!\n\nResultado: ${res.percentual}% — ${res.classificacao}\n\nTeste também: ${location.href}`;
+  const txt=`✨ Verifiquei a compatibilidade de "${p1.n}" + "${p2.n}" no GiohnneBeautyMatch Brasil!\n\nResultado: ${res.percentual}% — ${res.classificacao}\n\nVerifique também: ${location.href}`;
   if(navigator.share){navigator.share({title:'GiohnneBeautyMatch',text:txt});}
   else{navigator.clipboard.writeText(txt).then(()=>toast2('✅ Copiado! Cole no Instagram, WhatsApp ou TikTok 💄'));}
 }
@@ -599,7 +599,7 @@ function save(){
   const saved=JSON.parse(localStorage.getItem('gbm_saves')||'[]');
   saved.unshift({...lastR,date:new Date().toLocaleDateString('pt-BR')});
   localStorage.setItem('gbm_saves',JSON.stringify(saved.slice(0,20)));
-  toast2('💾 Análise salva! Acesse em "Minha Rotina" em breve.');
+  toast2('💾 Laudo salvo! Acesse em "Meu Protocolo de Cuidados" em breve.');
 }
 
 function reset(){
@@ -614,8 +614,8 @@ function openAff(name){
 
 function subscribe(){
   const v=document.getElementById('nlemail').value;
-  if(!v||!v.includes('@')){toast2('Digite um e-mail válido 😊');return;}
-  toast2(`🎉 Bem-vinda! ${v} cadastrado com sucesso!`);
+  if(!v||!v.includes('@')){toast2('Digite um e-mail válido para continuar 😊');return;}
+  toast2(`✅ Cadastro confirmado! ${v} receberá nossas análises semanais.`);
   document.getElementById('nlemail').value='';
 }
 </script>
