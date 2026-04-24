@@ -3,195 +3,541 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GiohnneBeautyMatch Brasil</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Giohnne BeautyMatch — Análise Cosmética Brasileira</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#FAF8F5;--white:#FFF;--primary:#C17B74;--primary-d:#A5635C;--primary-l:#F5E6E4;
-  --sage:#8BAF8A;--sage-l:#E8F0E7;--peach:#E8C9A0;--peach-l:#FDF4E7;
-  --text:#2C2C2C;--muted:#999;--border:#EDE8E1;
-  --sh:0 4px 24px rgba(0,0,0,.07);--r:16px;--rs:10px;
+  --bg:#F0EDE7;--white:#FEFDFB;--primary:#8B6742;--primary-d:#6A4D2F;--primary-l:#E8D5B8;
+  --gold:#B59A6A;--dark:#0E0B08;--sage:#5A7A69;--sage-l:#D4E3DC;
+  --peach:#A87B62;--peach-l:#EADaCE;
+  --text:#1A1410;--muted:#8A7F74;--border:#D9D1C5;
+  --sh:0 2px 24px rgba(14,11,8,.07);--sh2:0 8px 40px rgba(14,11,8,.12);
+  --r:2px;--rs:2px;
+  --font-serif:'Playfair Display',serif;
+  --font-sans:'Inter',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--text);min-height:100vh;font-weight:400;letter-spacing:.01em}
 a{color:inherit;text-decoration:none}
-button{font-family:'Inter',sans-serif}
+button{font-family:var(--font-sans);cursor:pointer}
 
-/* HEADER */
-header{background:var(--white);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.04)}
-.logo{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--primary);font-weight:700;letter-spacing:-.3px}
-.logo em{color:var(--text);font-style:normal;font-weight:400}
-.hbadge{background:var(--primary-l);color:var(--primary);font-size:.7rem;font-weight:600;padding:4px 10px;border-radius:50px;letter-spacing:.4px}
+/* ── ANNOUNCEMENT BAR ─────────────────────────────────────── */
+.abar{background:var(--dark);color:rgba(255,255,255,.75);font-size:.65rem;font-weight:500;text-align:center;padding:7px 18px;letter-spacing:1.2px;text-transform:uppercase}
+.abar span{color:var(--gold)}
 
-/* HERO */
-.hero{background:linear-gradient(140deg,#FDF6F0 0%,#F5E6E4 45%,#E8F0E7 100%);padding:44px 20px 36px;text-align:center}
-.hero-pill{display:inline-block;background:rgba(193,123,116,.12);color:var(--primary);font-size:.7rem;font-weight:700;padding:6px 16px;border-radius:50px;margin-bottom:18px;letter-spacing:.6px;text-transform:uppercase;border:1px solid rgba(193,123,116,.2)}
-.hero h1{font-family:'Playfair Display',serif;font-size:2rem;line-height:1.18;margin-bottom:12px}
-.hero h1 span{color:var(--primary)}
-.hero p{color:var(--muted);font-size:.9rem;line-height:1.65;max-width:330px;margin:0 auto 24px}
-.stats{display:flex;justify-content:center;gap:32px;margin-top:20px}
-.stat-n{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--primary);font-weight:700;display:block}
-.stat-l{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+/* ── HEADER ──────────────────────────────────────────────── */
+header{background:var(--white);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border)}
+.logo{font-family:var(--font-serif);font-size:1.2rem;color:var(--primary);font-weight:600;letter-spacing:.5px}
+.logo em{color:var(--text);font-style:italic;font-weight:400}
+.logo-line{display:block;width:100%;height:1px;background:linear-gradient(90deg,var(--primary),transparent);margin-top:2px;opacity:.4}
+.hbadge{background:var(--bg);color:var(--muted);font-size:.62rem;font-weight:600;padding:5px 12px;border:1px solid var(--border);letter-spacing:.8px;text-transform:uppercase}
 
-/* LAYOUT */
-main{padding:16px 18px;max-width:620px;margin:0 auto}
-.sec-label{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:12px}
+/* ── HERO ────────────────────────────────────────────────── */
+.hero{background:var(--white);padding:52px 24px 44px;text-align:center;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--gold),var(--sage),var(--primary))}
+.hero-pill{display:inline-block;background:transparent;color:var(--primary);font-size:.62rem;font-weight:600;padding:5px 14px;margin-bottom:22px;letter-spacing:1.2px;text-transform:uppercase;border:1px solid var(--primary-l)}
+.hero h1{font-family:var(--font-serif);font-size:2.1rem;line-height:1.15;margin-bottom:14px;font-weight:500;color:var(--dark)}
+.hero h1 span{color:var(--primary);font-style:italic}
+.hero p{color:var(--muted);font-size:.88rem;line-height:1.7;max-width:340px;margin:0 auto 28px;font-weight:300}
+.stats{display:flex;justify-content:center;gap:0;margin-top:24px;border:1px solid var(--border);display:inline-flex}
+.stat{padding:14px 28px;border-right:1px solid var(--border);text-align:center}
+.stat:last-child{border-right:none}
+.stat-n{font-family:var(--font-serif);font-size:1.4rem;color:var(--primary);font-weight:500;display:block;line-height:1}
+.stat-l{font-size:.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-top:4px;display:block}
 
-/* TABS */
-.tabs{display:flex;gap:8px;margin:18px 0 20px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+/* ── LAYOUT ──────────────────────────────────────────────── */
+main{padding:20px 18px;max-width:640px;margin:0 auto}
+.sec-label{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* ── CONCERN FILTER (NEW) ─────────────────────────────────── */
+.concern-bar{margin:20px 0 4px;padding:16px 18px;background:var(--white);border:1px solid var(--border)}
+.concern-title{font-size:.6rem;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.concerns{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.concerns::-webkit-scrollbar{display:none}
+.cpill{flex-shrink:0;padding:6px 14px;border:1px solid var(--border);background:transparent;font-size:.72rem;font-weight:500;cursor:pointer;transition:all .2s;color:var(--muted);white-space:nowrap;letter-spacing:.3px}
+.cpill.on{background:var(--dark);border-color:var(--dark);color:var(--white)}
+.cpill:hover:not(.on){border-color:var(--primary);color:var(--primary)}
+
+/* ── TABS ────────────────────────────────────────────────── */
+.tabs{display:flex;gap:0;margin:16px 0 18px;overflow-x:auto;scrollbar-width:none;border:1px solid var(--border);background:var(--white)}
 .tabs::-webkit-scrollbar{display:none}
-.tab{flex-shrink:0;padding:8px 18px;border-radius:50px;border:1.5px solid var(--border);background:var(--white);font-size:.82rem;font-weight:500;cursor:pointer;transition:all .2s;color:var(--muted);white-space:nowrap}
-.tab.on{background:var(--primary);border-color:var(--primary);color:#fff}
+.tab{flex:1;flex-shrink:0;padding:10px 16px;border:none;border-right:1px solid var(--border);background:transparent;font-size:.78rem;font-weight:500;cursor:pointer;transition:all .2s;color:var(--muted);white-space:nowrap;letter-spacing:.3px}
+.tab:last-child{border-right:none}
+.tab.on{background:var(--dark);color:var(--white);font-weight:600}
 
-/* CARD */
-.card{background:var(--white);border-radius:var(--r);padding:22px;box-shadow:var(--sh);margin-bottom:16px}
-.card h2{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:18px}
+/* ── CARD ────────────────────────────────────────────────── */
+.card{background:var(--white);border:1px solid var(--border);padding:24px;margin-bottom:14px}
+.card h2{font-family:var(--font-serif);font-size:1.1rem;margin-bottom:20px;font-weight:500;color:var(--dark);display:flex;align-items:center;gap:10px}
+.card h2::after{content:'';flex:1;height:1px;background:var(--border)}
 
-/* INPUT */
-.il{display:block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:7px}
+/* ── INPUT ───────────────────────────────────────────────── */
+.il{display:block;font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px}
 .iw{position:relative}
-.ii{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:.95rem;pointer-events:none}
-.si{width:100%;padding:13px 13px 13px 40px;border:1.5px solid var(--border);border-radius:var(--rs);font-size:.9rem;font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);transition:all .2s;outline:none}
+.ii{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:.9rem;pointer-events:none;opacity:.5}
+.si{width:100%;padding:13px 13px 13px 38px;border:1px solid var(--border);font-size:.88rem;font-family:var(--font-sans);background:var(--bg);color:var(--text);transition:all .2s;outline:none;font-weight:300}
 .si:focus{border-color:var(--primary);background:var(--white);box-shadow:0 0 0 3px var(--primary-l)}
-.div{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.78rem;margin:14px 0}
+.si::placeholder{color:var(--muted);opacity:.7}
+.div{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:.72rem;margin:16px 0;letter-spacing:.5px;text-transform:uppercase}
 .div::before,.div::after{content:'';flex:1;height:1px;background:var(--border)}
 
-/* DROPDOWN */
-.dd{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--white);border:1.5px solid var(--border);border-radius:var(--rs);box-shadow:0 10px 30px rgba(0,0,0,.1);z-index:50;max-height:210px;overflow-y:auto;display:none}
+/* ── DROPDOWN ────────────────────────────────────────────── */
+.dd{position:absolute;top:calc(100% + 2px);left:0;right:0;background:var(--white);border:1px solid var(--border);box-shadow:var(--sh2);z-index:50;max-height:220px;overflow-y:auto;display:none}
 .dd.on{display:block}
-.ddi{padding:11px 14px;cursor:pointer;display:flex;align-items:center;gap:11px;transition:background .15s}
+.ddi{padding:12px 14px;cursor:pointer;display:flex;align-items:center;gap:11px;transition:background .15s;border-bottom:1px solid var(--border)}
+.ddi:last-child{border-bottom:none}
 .ddi:hover{background:var(--bg)}
-.ddi:not(:last-child){border-bottom:1px solid var(--border)}
-.din{font-weight:500;font-size:.88rem}
-.dib{font-size:.72rem;color:var(--muted)}
-.dic{font-size:.68rem;background:var(--primary-l);color:var(--primary);padding:2px 8px;border-radius:50px;font-weight:600;flex-shrink:0}
+.din{font-weight:500;font-size:.86rem}
+.dib{font-size:.7rem;color:var(--muted);margin-top:1px}
+.dic{font-size:.65rem;background:var(--primary-l);color:var(--primary);padding:2px 8px;font-weight:600;flex-shrink:0;letter-spacing:.3px}
 
-/* SELECTED */
-.sel{background:var(--sage-l);border:1.5px solid var(--sage);border-radius:var(--rs);padding:11px 14px;display:flex;align-items:center;justify-content:space-between;margin-top:8px;animation:fadeIn .25s}
-.selr{background:none;border:none;cursor:pointer;color:var(--muted);font-size:1rem;padding:3px 6px}
+/* ── SELECTED ────────────────────────────────────────────── */
+.sel{background:var(--sage-l);border:1px solid var(--sage);padding:12px 14px;display:flex;align-items:center;justify-content:space-between;margin-top:8px;animation:fadeIn .25s}
+.selr{background:none;border:none;cursor:pointer;color:var(--muted);font-size:.9rem;padding:4px 6px;transition:color .2s}
+.selr:hover{color:var(--text)}
 
-/* BTN */
-.btn{width:100%;padding:15px;background:linear-gradient(135deg,var(--primary),var(--primary-d));color:#fff;border:none;border-radius:var(--rs);font-size:.95rem;font-weight:700;cursor:pointer;transition:all .2s;margin-top:18px;display:flex;align-items:center;justify-content:center;gap:8px;letter-spacing:.2px}
-.btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 6px 22px rgba(193,123,116,.35)}
-.btn:disabled{opacity:.55;cursor:not-allowed}
+/* ── BUTTON ──────────────────────────────────────────────── */
+.btn{width:100%;padding:16px;background:var(--dark);color:var(--white);border:none;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .2s;margin-top:20px;display:flex;align-items:center;justify-content:center;gap:8px;letter-spacing:.8px;text-transform:uppercase}
+.btn:hover:not(:disabled){background:var(--primary-d);box-shadow:0 4px 20px rgba(138,103,66,.3)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
 
-/* RESULTS */
+/* ── RESULTS ─────────────────────────────────────────────── */
 .res{display:none;animation:fadeIn .4s}
 .res.on{display:block}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 
-.rhead{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-.remoji{font-size:2.4rem}
-.rtit{font-family:'Playfair Display',serif;font-size:1.05rem;line-height:1.3}
-.rbadge{display:inline-block;padding:3px 10px;border-radius:50px;font-size:.72rem;font-weight:700;margin-top:4px}
-.b-ex{background:#E8F5E9;color:#2E7D32}.b-bo{background:#E3F2FD;color:#1565C0}
-.b-mo{background:#FFF8E1;color:#E65100}.b-ru{background:#FFEBEE;color:#C62828}
+.rhead{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.remoji{font-size:2.2rem;width:50px;height:50px;display:flex;align-items:center;justify-content:center;background:var(--bg);border:1px solid var(--border);flex-shrink:0}
+.rtit{font-family:var(--font-serif);font-size:1rem;line-height:1.3;font-weight:500}
+.rbadge{display:inline-block;padding:3px 10px;font-size:.68rem;font-weight:600;margin-top:5px;letter-spacing:.5px;text-transform:uppercase}
+.b-ex{background:#E8F5E9;color:#1B5E20}.b-bo{background:#E8F4FD;color:#0D47A1}
+.b-mo{background:#FFF8E1;color:#E65100}.b-ru{background:#FFEBEE;color:#B71C1C}
 
-.meter{margin:16px 0}
-.mrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
-.mlbl{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
-.mpct{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--primary)}
-.mbar{height:11px;background:var(--border);border-radius:50px;overflow:hidden}
-.mfill{height:100%;border-radius:50px;background:linear-gradient(90deg,var(--primary),var(--sage));transition:width 1.3s cubic-bezier(.4,0,.2,1);width:0}
+.meter{margin:18px 0}
+.mrow{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.mlbl{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
+.mpct{font-family:var(--font-serif);font-size:2rem;font-weight:400;color:var(--primary)}
+.mbar{height:3px;background:var(--border);overflow:hidden}
+.mfill{height:100%;background:linear-gradient(90deg,var(--primary),var(--gold));transition:width 1.4s cubic-bezier(.4,0,.2,1);width:0}
 
-.rsec{display:flex;flex-direction:column;gap:12px;margin-top:14px}
-.rs{padding:13px;border-radius:var(--rs);font-size:.87rem;line-height:1.65}
-.rs-a{background:#F8F9FA;border-left:3px solid var(--primary)}
-.rs-d{background:var(--sage-l);border-left:3px solid var(--sage)}
-.rs-w{background:#FFF8E1;border-left:3px solid #FFC107}
-.rs-m{background:var(--peach-l);border-left:3px solid var(--peach)}
-.rs-p{background:#F0F4FF;border-left:3px solid #7B9AFF}
-.rst{font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;display:flex;align-items:center;gap:5px}
+.rsec{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.rs{padding:14px;font-size:.85rem;line-height:1.7;font-weight:300}
+.rs-a{background:var(--bg);border-left:2px solid var(--primary)}
+.rs-d{background:var(--sage-l);border-left:2px solid var(--sage)}
+.rs-w{background:#FFF8E1;border-left:2px solid #D4A017}
+.rs-m{background:var(--peach-l);border-left:2px solid var(--peach)}
+.rs-p{background:var(--primary-l);border-left:2px solid var(--primary)}
+.rst{font-weight:600;font-size:.6rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;display:flex;align-items:center;gap:6px;color:var(--muted)}
 
-.sbtns{display:flex;gap:8px;margin-top:14px}
-.sbtn{flex:1;padding:10px 6px;border:1.5px solid var(--border);border-radius:var(--rs);background:var(--white);cursor:pointer;font-size:.75rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:5px;transition:all .2s;color:var(--text)}
-.sbtn:hover{background:var(--bg);border-color:var(--primary-l)}
+.sbtns{display:flex;gap:8px;margin-top:16px}
+.sbtn{flex:1;padding:11px 6px;border:1px solid var(--border);background:transparent;font-size:.72rem;font-weight:500;display:flex;align-items:center;justify-content:center;gap:5px;transition:all .2s;color:var(--text);letter-spacing:.3px}
+.sbtn:hover{background:var(--bg);border-color:var(--primary-l);color:var(--primary)}
 
-/* FEATURE GRID */
-.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
-.fc{background:var(--white);border-radius:var(--rs);padding:16px;text-align:center;cursor:pointer;box-shadow:var(--sh);transition:all .22s;border:1.5px solid transparent}
-.fc:hover{transform:translateY(-2px);border-color:var(--primary-l)}
-.fi{font-size:1.7rem;margin-bottom:7px}
-.fn{font-size:.8rem;font-weight:700;margin-bottom:3px}
-.fd{font-size:.68rem;color:var(--muted);line-height:1.4}
-.fc-hot{border-color:var(--primary-l);background:linear-gradient(135deg,#FFF,#FDF6F0)}
-.hot-tag{background:var(--primary);color:#fff;font-size:.6rem;font-weight:700;padding:2px 7px;border-radius:50px;margin-left:4px;vertical-align:middle}
+/* ── SEMÁFORO DE INGREDIENTES (NEW) ────────────────────────── */
+.semaforo{margin-top:16px;padding:14px;background:var(--bg);border-left:2px solid var(--gold)}
+.sem-title{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px}
+.sem-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:.78rem}
+.sem-row:last-child{margin-bottom:0}
+.sem-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.sem-g{background:#3D8B37}.sem-y{background:#D4A017}.sem-r{background:#C0392B}
+.sem-name{font-weight:500;min-width:160px;font-size:.76rem}
+.sem-fn{color:var(--muted);font-size:.72rem}
 
-/* DESTAQUE */
-.dest{background:linear-gradient(135deg,#FDF4E7,#F5E6E4);border:1.5px solid var(--peach);border-radius:var(--r);padding:18px;margin-bottom:18px;position:relative}
-.dest-tag{position:absolute;top:12px;right:12px;background:var(--peach);color:#7A5C3A;font-size:.62rem;font-weight:700;padding:3px 9px;border-radius:50px;text-transform:uppercase;letter-spacing:.4px}
-.dest-inner{display:flex;align-items:center;gap:13px;margin-top:6px}
+/* ── FEATURE GRID ────────────────────────────────────────── */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+.fc{background:var(--white);border:1px solid var(--border);padding:18px;cursor:pointer;transition:all .22s;text-align:left}
+.fc:hover{border-color:var(--primary);transform:translateY(-1px);box-shadow:var(--sh)}
+.fi{font-size:1.5rem;margin-bottom:10px;display:block}
+.fn{font-size:.8rem;font-weight:600;margin-bottom:4px;letter-spacing:.2px}
+.fd{font-size:.67rem;color:var(--muted);line-height:1.5}
+.fc-gold{border-color:var(--gold);background:linear-gradient(135deg,var(--white),#FDF8EE)}
+.hot-tag{background:var(--dark);color:var(--white);font-size:.55rem;font-weight:600;padding:2px 6px;margin-left:4px;vertical-align:middle;letter-spacing:.5px}
 
-/* PRODUCTS SCROLL */
-.ps{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;margin:0 -18px;padding:0 18px 8px}
+/* ── INCI DECODER CARD (NEW) ─────────────────────────────── */
+.inci-cta{background:var(--dark);border:none;padding:20px 24px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:all .2s;width:100%;text-align:left}
+.inci-cta:hover{background:var(--primary-d)}
+.inci-cta-text h3{font-family:var(--font-serif);color:var(--white);font-size:.95rem;font-weight:500;margin-bottom:4px}
+.inci-cta-text p{color:rgba(255,255,255,.55);font-size:.72rem;font-weight:300}
+.inci-cta-arrow{color:var(--gold);font-size:1.4rem;flex-shrink:0}
+
+/* ── DESTAQUE ────────────────────────────────────────────── */
+.dest{background:var(--white);border:1px solid var(--border);padding:18px;margin-bottom:14px;position:relative}
+.dest-tag{position:absolute;top:14px;right:14px;background:var(--dark);color:var(--white);font-size:.58rem;font-weight:600;padding:3px 8px;text-transform:uppercase;letter-spacing:.6px}
+.dest-inner{display:flex;align-items:center;gap:14px;margin-top:8px}
+
+/* ── PRODUCTS SCROLL ─────────────────────────────────────── */
+.ps{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;margin:0 -18px;padding:0 18px 8px}
 .ps::-webkit-scrollbar{display:none}
-.pc{flex-shrink:0;width:152px;background:var(--white);border-radius:var(--rs);padding:15px;box-shadow:var(--sh);transition:transform .2s}
-.pc:hover{transform:translateY(-2px)}
-.pce{font-size:1.9rem;margin-bottom:7px}
-.pcn{font-weight:600;font-size:.82rem;line-height:1.3;margin-bottom:3px}
-.pcb{font-size:.68rem;color:var(--muted);margin-bottom:9px}
-.pcp{font-weight:700;color:var(--primary);font-size:.92rem;margin-bottom:8px}
-.pbuy{width:100%;padding:7px;background:var(--primary);color:#fff;border:none;border-radius:7px;font-size:.72rem;font-weight:600;cursor:pointer;transition:all .2s}
-.pbuy:hover{background:var(--primary-d)}
+.pc{flex-shrink:0;width:148px;background:var(--white);border:1px solid var(--border);padding:16px;transition:all .2s}
+.pc:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:var(--sh)}
+.pce{font-size:1.7rem;margin-bottom:8px;display:block}
+.pcn{font-weight:600;font-size:.8rem;line-height:1.35;margin-bottom:2px}
+.pcb{font-size:.66rem;color:var(--muted);margin-bottom:10px}
+.pcp{font-weight:600;color:var(--primary);font-size:.88rem;margin-bottom:10px;font-family:var(--font-serif)}
+.pbuy{width:100%;padding:8px;background:transparent;color:var(--primary);border:1px solid var(--primary);font-size:.7rem;font-weight:600;cursor:pointer;transition:all .2s;letter-spacing:.3px}
+.pbuy:hover{background:var(--primary);color:var(--white)}
 
-/* RANKING */
-.rank-item{display:flex;align-items:center;gap:12px;padding:12px;background:var(--white);border-radius:var(--rs);margin-bottom:8px;box-shadow:var(--sh)}
-.rank-n{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--primary);font-weight:700;width:24px;flex-shrink:0;text-align:center}
-.rank-bar{flex:1;height:6px;background:var(--border);border-radius:50px;overflow:hidden;margin-top:4px}
-.rank-fill{height:100%;border-radius:50px;background:linear-gradient(90deg,var(--primary),var(--sage))}
+/* ── RANKING ─────────────────────────────────────────────── */
+.rank-item{display:flex;align-items:center;gap:12px;padding:14px;background:var(--white);border:1px solid var(--border);margin-bottom:7px;transition:all .2s}
+.rank-item:hover{border-color:var(--primary-l)}
+.rank-n{font-family:var(--font-serif);font-size:1.1rem;color:var(--primary);font-weight:400;width:22px;flex-shrink:0;text-align:center}
+.rank-bar{flex:1;height:2px;background:var(--border);overflow:hidden;margin-top:6px}
+.rank-fill{height:100%;background:linear-gradient(90deg,var(--primary),var(--gold))}
 
-/* TIPS */
-.tip{background:var(--white);border-radius:var(--rs);padding:14px;display:flex;gap:12px;box-shadow:var(--sh);margin-bottom:9px}
-.tii{font-size:1.4rem;flex-shrink:0;margin-top:1px}
-.tit{font-weight:600;font-size:.87rem;margin-bottom:3px}
-.tid{font-size:.78rem;color:var(--muted);line-height:1.5}
+/* ── INCOMPATIBILITY ALERTS (NEW) ───────────────────────── */
+.conflict-grid{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+.conflict-item{background:var(--white);border:1px solid var(--border);border-left:2px solid #C0392B;padding:13px 14px;display:flex;align-items:flex-start;gap:12px}
+.conflict-pair{font-weight:600;font-size:.82rem;margin-bottom:3px;color:var(--dark)}
+.conflict-reason{font-size:.72rem;color:var(--muted);line-height:1.5;font-weight:300}
+.conflict-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
 
-/* NEWSLETTER */
-.nl{background:linear-gradient(135deg,var(--primary),var(--primary-d));border-radius:var(--r);padding:22px;text-align:center;color:#fff;margin-bottom:18px}
-.nl h3{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:7px}
-.nl p{font-size:.82rem;opacity:.85;margin-bottom:15px;line-height:1.5}
-.nlf{display:flex;gap:7px}
-.nli{flex:1;padding:11px 13px;border:none;border-radius:8px;font-size:.88rem;font-family:'Inter',sans-serif;outline:none}
-.nlb{padding:11px 14px;background:var(--peach);color:#7A5C3A;border:none;border-radius:8px;font-weight:700;font-size:.8rem;cursor:pointer;white-space:nowrap}
+/* ── TIPS ────────────────────────────────────────────────── */
+.tip{background:var(--white);border:1px solid var(--border);padding:16px;display:flex;gap:12px;margin-bottom:8px}
+.tii{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.tit{font-weight:600;font-size:.85rem;margin-bottom:4px}
+.tid{font-size:.78rem;color:var(--muted);line-height:1.6;font-weight:300}
 
-/* MONETIZE BOX */
-.money-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
-.money-card{background:var(--white);border-radius:var(--rs);padding:15px;box-shadow:var(--sh);border-top:3px solid var(--primary)}
-.mc-icon{font-size:1.5rem;margin-bottom:6px}
-.mc-title{font-weight:700;font-size:.82rem;margin-bottom:4px}
-.mc-desc{font-size:.7rem;color:var(--muted);line-height:1.4}
+/* ── NEWSLETTER ──────────────────────────────────────────── */
+.nl{background:var(--dark);padding:28px 24px;text-align:center;margin-bottom:14px;position:relative;overflow:hidden}
+.nl::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--gold),var(--sage))}
+.nl h3{font-family:var(--font-serif);font-size:1.1rem;margin-bottom:8px;color:var(--white);font-weight:400;font-style:italic}
+.nl p{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:18px;line-height:1.6;font-weight:300}
+.nlf{display:flex;gap:0;max-width:380px;margin:0 auto}
+.nli{flex:1;padding:12px 14px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.07);font-size:.82rem;font-family:var(--font-sans);outline:none;color:var(--white)}
+.nli::placeholder{color:rgba(255,255,255,.3)}
+.nlb{padding:12px 18px;background:var(--primary);color:var(--white);border:none;font-weight:600;font-size:.75rem;cursor:pointer;transition:all .2s;letter-spacing:.5px;white-space:nowrap}
+.nlb:hover{background:var(--primary-d)}
 
-/* FOOTER */
-footer{background:var(--white);border-top:1px solid var(--border);padding:22px 20px;text-align:center;margin-top:8px}
-.fl{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--primary);margin-bottom:7px}
-.ft{font-size:.72rem;color:var(--muted);line-height:1.7}
+/* ── MONETIZE ────────────────────────────────────────────── */
+.money-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.money-card{background:var(--white);border:1px solid var(--border);border-top:2px solid var(--primary);padding:16px}
+.mc-icon{font-size:1.3rem;margin-bottom:7px}
+.mc-title{font-weight:600;font-size:.8rem;margin-bottom:5px;letter-spacing:.2px}
+.mc-desc{font-size:.68rem;color:var(--muted);line-height:1.5;font-weight:300}
 
-/* LOADING */
-.lov{display:none;position:fixed;inset:0;background:rgba(255,255,255,.88);z-index:200;align-items:center;justify-content:center;flex-direction:column;gap:14px;backdrop-filter:blur(3px)}
+/* ── FOOTER ──────────────────────────────────────────────── */
+footer{background:var(--dark);padding:32px 20px 24px;margin-top:8px}
+.footer-top{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand .fl{font-family:var(--font-serif);font-size:1.1rem;color:var(--gold);margin-bottom:8px;font-style:italic}
+.footer-brand p{font-size:.7rem;color:rgba(255,255,255,.4);line-height:1.7;font-weight:300}
+.footer-links h4{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.35);margin-bottom:12px}
+.footer-links ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-links li a{font-size:.75rem;color:rgba(255,255,255,.55);transition:color .2s;font-weight:300;cursor:pointer}
+.footer-links li a:hover{color:var(--gold)}
+.footer-bottom{text-align:center}
+.ft{font-size:.65rem;color:rgba(255,255,255,.3);line-height:1.8;font-weight:300}
+.ft-disclaimer{font-size:.63rem;color:rgba(255,255,255,.2);margin-top:10px;line-height:1.6;font-style:italic}
+.ft-aff{color:var(--gold);opacity:.6}
+
+/* ── LOADING ─────────────────────────────────────────────── */
+.lov{display:none;position:fixed;inset:0;background:rgba(14,11,8,.85);z-index:200;align-items:center;justify-content:center;flex-direction:column;gap:20px;backdrop-filter:blur(6px)}
 .lov.on{display:flex}
-.spin{width:44px;height:44px;border:3px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin .75s linear infinite}
+.spin{width:36px;height:36px;border:2px solid rgba(255,255,255,.1);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.ltxt{font-family:'Playfair Display',serif;color:var(--primary);font-size:.95rem}
+.ltxt{font-family:var(--font-serif);color:rgba(255,255,255,.7);font-size:.9rem;font-style:italic;text-align:center;max-width:260px;line-height:1.5}
 
-/* TOAST */
-.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(100px);background:#2C2C2C;color:#fff;padding:11px 22px;border-radius:50px;font-size:.82rem;font-weight:500;z-index:300;transition:transform .3s;white-space:nowrap;max-width:90vw;text-align:center}
+/* ── TOAST ───────────────────────────────────────────────── */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--dark);color:rgba(255,255,255,.85);padding:12px 22px;font-size:.78rem;font-weight:400;z-index:300;transition:transform .3s;white-space:nowrap;max-width:90vw;text-align:center;border-bottom:2px solid var(--gold);letter-spacing:.2px}
 .toast.on{transform:translateX(-50%) translateY(0)}
 
+/* ── MODALS ──────────────────────────────────────────────── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(14,11,8,.7);z-index:500;backdrop-filter:blur(4px);align-items:flex-end;justify-content:center}
+.modal-overlay.on{display:flex}
+.modal{background:var(--white);width:100%;max-width:640px;max-height:90vh;overflow-y:auto;padding:28px 24px;position:relative;animation:slideUp .3s ease}
+@keyframes slideUp{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.modal-title{font-family:var(--font-serif);font-size:1.05rem;font-weight:500;color:var(--dark)}
+.modal-close{background:none;border:1px solid var(--border);width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:.9rem;cursor:pointer;color:var(--muted);transition:all .2s}
+.modal-close:hover{background:var(--dark);color:var(--white);border-color:var(--dark)}
+.modal-body{font-size:.82rem;line-height:1.8;color:var(--muted);font-weight:300}
+.modal-body h4{font-weight:600;color:var(--text);font-size:.82rem;margin:16px 0 6px;text-transform:uppercase;letter-spacing:.6px;font-size:.7rem}
+.modal-body p{margin-bottom:12px}
+.modal-body ul{padding-left:16px;margin-bottom:12px}
+.modal-body li{margin-bottom:6px}
+.modal-body code{background:var(--bg);padding:2px 6px;font-size:.78rem;font-family:monospace;border:1px solid var(--border)}
+.modal-body pre{background:var(--bg);padding:14px;border:1px solid var(--border);font-size:.75rem;overflow-x:auto;line-height:1.6;margin-bottom:12px}
+
+/* ── BUG / FEATURE FORM ──────────────────────────────────── */
+.mform-field{margin-bottom:14px}
+.mform-field label{display:block;font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:6px}
+.mform-field input,.mform-field textarea,.mform-field select{width:100%;padding:11px 13px;border:1px solid var(--border);background:var(--bg);font-family:var(--font-sans);font-size:.84rem;color:var(--text);outline:none;font-weight:300;transition:border .2s}
+.mform-field input:focus,.mform-field textarea:focus,.mform-field select:focus{border-color:var(--primary)}
+.mform-field textarea{resize:vertical;min-height:100px}
+.mform-btn{background:var(--dark);color:var(--white);border:none;padding:13px 24px;font-size:.78rem;font-weight:600;cursor:pointer;letter-spacing:.8px;text-transform:uppercase;transition:all .2s;width:100%}
+.mform-btn:hover{background:var(--primary-d)}
+
+/* ── INCI DECODER MODAL (NEW) ─────────────────────────────── */
+.inci-search-wrap{position:relative;margin-bottom:16px}
+.inci-results{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.inci-card{padding:14px;background:var(--bg);border:1px solid var(--border);border-left:2px solid var(--primary)}
+.inci-name{font-weight:600;font-size:.88rem;margin-bottom:4px}
+.inci-fn{font-size:.68rem;text-transform:uppercase;letter-spacing:.7px;color:var(--primary);margin-bottom:6px;font-weight:600}
+.inci-desc{font-size:.78rem;color:var(--muted);line-height:1.6;font-weight:300}
+.inci-safe{display:inline-block;font-size:.62rem;font-weight:700;padding:2px 8px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px}
+.inci-safe-g{background:#E8F5E9;color:#1B5E20}
+.inci-safe-y{background:#FFF8E1;color:#E65100}
+.inci-safe-r{background:#FFEBEE;color:#B71C1C}
+.inci-empty{text-align:center;color:var(--muted);font-size:.82rem;padding:24px;font-style:italic}
+
+/* ── FAB INCI ────────────────────────────────────────────── */
+.fab{position:fixed;bottom:80px;right:18px;width:48px;height:48px;background:var(--dark);border:none;color:var(--white);font-size:1.1rem;cursor:pointer;z-index:90;transition:all .2s;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(14,11,8,.25)}
+.fab:hover{background:var(--primary)}
+.fab-tip{position:absolute;right:54px;background:var(--dark);color:var(--white);font-size:.65rem;padding:4px 10px;white-space:nowrap;letter-spacing:.4px;pointer-events:none;opacity:0;transition:opacity .2s}
+.fab:hover .fab-tip{opacity:1}
+
 @media(min-width:600px){
-  .hero h1{font-size:2.5rem}
+  .hero h1{font-size:2.6rem}
   .fgrid{grid-template-columns:repeat(4,1fr)}
   .money-grid{grid-template-columns:repeat(4,1fr)}
+  .footer-top{grid-template-columns:1.5fr 1fr 1fr}
+  .modal-overlay{align-items:center}
+  .modal{max-height:80vh}
 }
 </style>
 </head>
 <body>
 
-<div class="lov" id="lov"><div class="spin"></div><div class="ltxt" id="ltxt">Verificando compatibilidade de formulações... 🔬</div></div>
+<!-- ── LOADING ──────────────────────────────────────── -->
+<div class="lov" id="lov">
+  <div class="spin"></div>
+  <div class="ltxt" id="ltxt">Verificando compatibilidade de formulações...</div>
+</div>
 <div class="toast" id="toast"></div>
 
+<!-- ── FAB INCI DECODER ─────────────────────────────── -->
+<button class="fab" onclick="openModal('inciModal')" title="Decodificador INCI">
+  <span class="fab-tip">Decodificador INCI</span>
+  🔬
+</button>
+
+<!-- ════════════════ MODALS ════════════════ -->
+
+<!-- TERMS OF USE -->
+<div class="modal-overlay" id="termsModal" onclick="if(event.target===this)closeModal('termsModal')">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Termos de Uso</div>
+      <button class="modal-close" onclick="closeModal('termsModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <h4>1. Aceitação dos Termos</h4>
+      <p>Ao acessar e utilizar a plataforma Giohnne BeautyMatch, você concorda com estes Termos de Uso na íntegra. Caso não concorde com qualquer disposição, pedimos que não utilize os serviços.</p>
+      <h4>2. Natureza Informacional</h4>
+      <p>Todas as análises de compatibilidade disponibilizadas pela plataforma têm caráter exclusivamente informacional e educacional. Os resultados são baseados em parâmetros técnicos de química cosmética e não configuram orientação médica, dermatológica ou tricológica. Consulte sempre um profissional habilitado para questões de saúde cutânea.</p>
+      <h4>3. Precisão das Análises</h4>
+      <p>As análises são geradas com base nas informações de INCI (International Nomenclature of Cosmetic Ingredients) disponíveis publicamente. A Giohnne BeautyMatch não se responsabiliza por variações de formulação entre lotes, versões regionais de produtos ou ingredientes não divulgados pelos fabricantes.</p>
+      <h4>4. Links Afiliados</h4>
+      <p>A plataforma utiliza links de afiliados de marketplaces (Amazon, Shopee, Magalu e similares). Ao clicar em tais links e realizar uma compra, a Giohnne BeautyMatch pode receber uma comissão sem custo adicional ao consumidor. Esta relação é sempre identificada de forma transparente.</p>
+      <h4>5. Propriedade Intelectual</h4>
+      <p>Todo o conteúdo da plataforma — textos, análises, interface, metodologia e base de dados — é propriedade da Giohnne Beauty. É proibida a reprodução, distribuição ou uso comercial sem autorização expressa.</p>
+      <h4>6. Modificações</h4>
+      <p>Estes termos podem ser atualizados periodicamente. O uso continuado da plataforma após alterações implica concordância com as novas disposições.</p>
+      <p style="margin-top:20px;font-size:.7rem;color:var(--muted)">Última atualização: Abril de 2025 · Giohnne Beauty LTDA · CNPJ em processo de registro</p>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY -->
+<div class="modal-overlay" id="privacyModal" onclick="if(event.target===this)closeModal('privacyModal')">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Política de Privacidade</div>
+      <button class="modal-close" onclick="closeModal('privacyModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <h4>Conformidade com a LGPD</h4>
+      <p>A Giohnne BeautyMatch está comprometida com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018). Tratamos seus dados com transparência, segurança e respeito.</p>
+      <h4>Dados Coletados</h4>
+      <ul>
+        <li><strong>E-mail:</strong> coletado voluntariamente no cadastro da newsletter, utilizado exclusivamente para envio de conteúdo informativo.</li>
+        <li><strong>Dados de navegação:</strong> coletamos informações anônimas de uso para melhoria contínua da plataforma (páginas acessadas, tempo de sessão).</li>
+        <li><strong>Dados de análise:</strong> as combinações de produtos verificadas são processadas localmente e não associadas a dados pessoais identificáveis.</li>
+      </ul>
+      <h4>Como Usamos os Dados</h4>
+      <ul>
+        <li>Envio de newsletter informativa (mediante opt-in explícito)</li>
+        <li>Melhoria de funcionalidades e experiência da plataforma</li>
+        <li>Análises agregadas e anônimas de produtos mais pesquisados</li>
+      </ul>
+      <h4>Compartilhamento</h4>
+      <p>Não vendemos, alugamos ou compartilhamos dados pessoais com terceiros para fins comerciais. Dados podem ser compartilhados com provedores de serviço essenciais (hospedagem, análise) sob obrigação de confidencialidade.</p>
+      <h4>Seus Direitos (Art. 18, LGPD)</h4>
+      <p>Você tem direito a: acesso, correção, portabilidade, anonimização, eliminação e revogação de consentimento dos seus dados. Solicite pelo e-mail: privacidade@giohnnebeauty.com.br</p>
+      <h4>Cookies</h4>
+      <p>Utilizamos cookies funcionais essenciais para operação da plataforma e cookies analíticos anônimos. Não utilizamos cookies de rastreamento de terceiros para publicidade comportamental.</p>
+      <p style="margin-top:20px;font-size:.7rem;color:var(--muted)">Última atualização: Abril de 2025 · Para dúvidas: privacidade@giohnnebeauty.com.br</p>
+    </div>
+  </div>
+</div>
+
+<!-- API DOCS -->
+<div class="modal-overlay" id="apiModal" onclick="if(event.target===this)closeModal('apiModal')">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">API Docs — Giohnne BeautyMatch API</div>
+      <button class="modal-close" onclick="closeModal('apiModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div style="background:var(--bg);border:1px solid var(--border);padding:12px 14px;margin-bottom:16px;font-size:.72rem;color:var(--peach);letter-spacing:.5px">⚠ API em fase beta — acesso mediante solicitação</div>
+      <h4>Visão Geral</h4>
+      <p>A Giohnne BeautyMatch API permite que desenvolvedores integrem análises de compatibilidade cosmética em suas próprias aplicações, com foco no mercado brasileiro e conformidade com a ANVISA.</p>
+      <h4>Base URL</h4>
+      <pre>https://api.giohnnebeauty.com.br/v1</pre>
+      <h4>Autenticação</h4>
+      <p>Todas as requisições devem incluir o header de autenticação:</p>
+      <pre>Authorization: Bearer {seu_api_key}</pre>
+      <h4>Endpoint: Análise de Compatibilidade</h4>
+      <pre>POST /compatibility
+
+Body (JSON):
+{
+  "product_1": {
+    "name": "Nome do Produto",
+    "inci": ["Aqua", "Glycerin", "Niacinamide"]
+  },
+  "product_2": {
+    "name": "Nome do Produto",
+    "inci": ["Aqua", "Retinol", "BHT"]
+  }
+}
+
+Response:
+{
+  "compatibility_index": 72,
+  "classification": "Boa Compatibilidade",
+  "analysis": "...",
+  "usage_protocol": "...",
+  "alert": null,
+  "ideal_skin_type": "..."
+}</pre>
+      <h4>Endpoint: Decodificador INCI</h4>
+      <pre>GET /inci/{ingredient_name}
+
+Response:
+{
+  "inci": "Niacinamide",
+  "function": "Regulador de Oleosidade",
+  "safety_level": "verde",
+  "description": "..."
+}</pre>
+      <h4>Limites de Uso (Beta)</h4>
+      <ul>
+        <li>100 requisições/dia no plano gratuito</li>
+        <li>Planos pagos a partir de R$ 49,90/mês</li>
+        <li>SLA de 99,5% de disponibilidade</li>
+      </ul>
+      <p>Solicitar acesso beta: <strong>api@giohnnebeauty.com.br</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURE REQUESTS -->
+<div class="modal-overlay" id="featureModal" onclick="if(event.target===this)closeModal('featureModal')">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Solicitar Funcionalidade</div>
+      <button class="modal-close" onclick="closeModal('featureModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="margin-bottom:18px">Sua sugestão ajuda a construir a melhor plataforma de análise cosmética do Brasil. Compartilhe sua ideia abaixo.</p>
+      <div class="mform-field">
+        <label>Seu Nome</label>
+        <input type="text" id="feat-name" placeholder="Como podemos te chamar?">
+      </div>
+      <div class="mform-field">
+        <label>E-mail (opcional)</label>
+        <input type="email" id="feat-email" placeholder="Para te notificarmos quando implementada">
+      </div>
+      <div class="mform-field">
+        <label>Categoria</label>
+        <select id="feat-cat">
+          <option value="">Selecione uma categoria</option>
+          <option>Análise de Ingredientes</option>
+          <option>Novos Produtos no Banco de Dados</option>
+          <option>Funcionalidade de Perfil</option>
+          <option>Filtros e Busca</option>
+          <option>Integração com Marcas</option>
+          <option>Outro</option>
+        </select>
+      </div>
+      <div class="mform-field">
+        <label>Descreva a funcionalidade</label>
+        <textarea id="feat-desc" placeholder="Explique a ideia com o máximo de detalhes possível..."></textarea>
+      </div>
+      <button class="mform-btn" onclick="submitFeature()">Enviar Sugestão →</button>
+    </div>
+  </div>
+</div>
+
+<!-- SUBMIT A BUG -->
+<div class="modal-overlay" id="bugModal" onclick="if(event.target===this)closeModal('bugModal')">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Reportar um Problema</div>
+      <button class="modal-close" onclick="closeModal('bugModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="margin-bottom:18px">Encontrou algo errado? Nos ajude a melhorar. Descreva o problema com o máximo de detalhes.</p>
+      <div class="mform-field">
+        <label>Onde ocorreu o problema?</label>
+        <select id="bug-area">
+          <option value="">Selecione a área</option>
+          <option>Análise de Compatibilidade</option>
+          <option>Busca de Produtos</option>
+          <option>Decodificador INCI</option>
+          <option>Filtro por Preocupação</option>
+          <option>Interface / Visual</option>
+          <option>Newsletter</option>
+          <option>Outro</option>
+        </select>
+      </div>
+      <div class="mform-field">
+        <label>Descreva o problema</label>
+        <textarea id="bug-desc" placeholder="O que aconteceu? O que você esperava que acontecesse?"></textarea>
+      </div>
+      <div class="mform-field">
+        <label>Seu dispositivo / navegador</label>
+        <input type="text" id="bug-device" placeholder="Ex: iPhone 15, Chrome 124 / Android, Samsung Internet">
+      </div>
+      <div class="mform-field">
+        <label>E-mail (para retorno)</label>
+        <input type="email" id="bug-email" placeholder="Opcional">
+      </div>
+      <button class="mform-btn" onclick="submitBug()">Enviar Relatório →</button>
+    </div>
+  </div>
+</div>
+
+<!-- INCI DECODER MODAL -->
+<div class="modal-overlay" id="inciModal" onclick="if(event.target===this)closeModal('inciModal')">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Decodificador de Ingredientes INCI</div>
+      <button class="modal-close" onclick="closeModal('inciModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="margin-bottom:14px;font-size:.78rem">Digite o nome INCI de um ingrediente para descobrir sua função, nível de segurança e modo de ação na pele ou nos cabelos.</p>
+      <div class="inci-search-wrap">
+        <input class="si" style="padding-left:13px" id="inci-input" placeholder="Ex: Niacinamide, Retinol, Glycerin..." oninput="searchINCI()" autocomplete="off">
+      </div>
+      <div class="inci-results" id="inci-results">
+        <div class="inci-empty">Digite acima para pesquisar um ingrediente</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ PAGE ════════════════ -->
+
+<div class="abar">🇧🇷 <span>Giohnne BeautyMatch</span> — A primeira plataforma de análise de compatibilidade cosmética focada em produtos brasileiros</div>
+
 <header>
-  <div class="logo">Giohnne<em>Beauty</em></div>
-  <div class="hbadge">🇧🇷 100% Brasil</div>
+  <div>
+    <div class="logo">Giohnne <em>Beauty</em>Match</div>
+    <span class="logo-line"></span>
+  </div>
+  <div class="hbadge">🇧🇷 Brasil</div>
 </header>
 
 <div class="hero">
@@ -199,25 +545,41 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:22px 2
   <h1>Menos tentativa e erro.<br><span>Mais ciência</span> na sua rotina.</h1>
   <p>Verifique a compatibilidade físico-química entre seus produtos de skincare, maquiagem e cuidados capilares — com base técnica, em segundos.</p>
   <div class="stats">
-    <div><span class="stat-n">500+</span><span class="stat-l">Marcas BR</span></div>
-    <div><span class="stat-n">Técnico</span><span class="stat-l">Base Científica</span></div>   
+    <div class="stat"><span class="stat-n">500+</span><span class="stat-l">Marcas BR</span></div>
+    <div class="stat"><span class="stat-n">30+</span><span class="stat-l">Ingredientes INCI</span></div>
+    <div class="stat"><span class="stat-n">Grátis</span><span class="stat-l">Para sempre</span></div>
   </div>
 </div>
 
 <main>
 
-<div class="tabs" style="margin-top:16px">
+<!-- CONCERN FILTER (NEW) -->
+<div class="concern-bar">
+  <div class="concern-title">Filtrar por preocupação cutânea</div>
+  <div class="concerns" id="concerns">
+    <button class="cpill on" onclick="setConcern('todos',this)">Todos os produtos</button>
+    <button class="cpill" onclick="setConcern('acne',this)">Acne & Poros</button>
+    <button class="cpill" onclick="setConcern('antiidade',this)">Anti-idade</button>
+    <button class="cpill" onclick="setConcern('hidratacao',this)">Hidratação Intensa</button>
+    <button class="cpill" onclick="setConcern('manchas',this)">Manchas & Tom</button>
+    <button class="cpill" onclick="setConcern('oleosidade',this)">Controle de Oleosidade</button>
+    <button class="cpill" onclick="setConcern('cachos',this)">Cachos & Frizz</button>
+    <button class="cpill" onclick="setConcern('crescimento',this)">Crescimento Capilar</button>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs" style="margin-top:0">
   <button class="tab on" onclick="setTab('todos',this)">🌟 Todos</button>
   <button class="tab" onclick="setTab('skincare',this)">🧴 Skincare</button>
   <button class="tab" onclick="setTab('maquiagem',this)">💄 Maquiagem</button>
   <button class="tab" onclick="setTab('cabelos',this)">🌀 Cabelos</button>
 </div>
 
-<!-- SEARCH -->
+<!-- SEARCH CARD -->
 <div class="card">
   <h2>🔬 Verificar Compatibilidade</h2>
   <div style="display:flex;flex-direction:column;gap:14px">
-
     <div id="grp1">
       <label class="il">Produto 1</label>
       <div class="iw">
@@ -227,9 +589,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:22px 2
       </div>
       <div id="sel1" style="display:none"></div>
     </div>
-
-    <div class="div">➕ é compatível com</div>
-
+    <div class="div">é compatível com</div>
     <div id="grp2">
       <label class="il">Produto 2</label>
       <div class="iw">
@@ -240,14 +600,13 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:22px 2
       <div id="sel2" style="display:none"></div>
     </div>
   </div>
-
   <button class="btn" id="btnck" onclick="check()" disabled>
-    <span>✨</span> Verificar Compatibilidade
+    Verificar Compatibilidade →
   </button>
-  <div style="text-align:center;margin-top:10px;font-size:.72rem;color:var(--muted)">🔒 Verificação técnica de compatibilidade galénica</div>
+  <div style="text-align:center;margin-top:12px;font-size:.65rem;color:var(--muted);letter-spacing:.5px">🔒 VERIFICAÇÃO TÉCNICA DE COMPATIBILIDADE GALÉNICA · GRATUITA</div>
 </div>
 
-<!-- RESULT -->
+<!-- RESULT CARD -->
 <div class="card res" id="resCard">
   <div class="rhead">
     <div class="remoji" id="remoji">✨</div>
@@ -261,6 +620,10 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:22px 2
     <div class="mbar"><div class="mfill" id="mfill"></div></div>
   </div>
   <div class="rsec" id="rsec"></div>
+  <div class="semaforo" id="semaforo" style="display:none">
+    <div class="sem-title">🚦 Semáforo de Ingredientes-Chave</div>
+    <div id="sem-items"></div>
+  </div>
   <div class="sbtns">
     <button class="sbtn" onclick="share()">📤 Compartilhar</button>
     <button class="sbtn" onclick="save()">💾 Salvar</button>
@@ -269,80 +632,122 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:22px 2
 </div>
 
 <!-- FEATURES -->
-<div class="sec-label" style="margin-top:4px">Recursos Exclusivos</div>
+<div class="sec-label" style="margin-top:6px">Recursos Exclusivos</div>
 <div class="fgrid">
-  <div class="fc fc-hot" onclick="toast2('🎯 Diagnóstico de Biotipo Cutâneo — Em breve! Cadastre seu e-mail para ser avisada.')">
-    <div class="fi">🎯</div>
+  <div class="fc fc-gold" onclick="toast2('🎯 Diagnóstico de Biotipo Cutâneo — Em breve! Cadastre seu e-mail para ser avisada.')">
+    <span class="fi">🎯</span>
     <div class="fn">Diagnóstico de Biotipo <span class="hot-tag">NEW</span></div>
     <div class="fd">Identifique seu biotipo e necessidades específicas</div>
   </div>
   <div class="fc" onclick="toast2('🌀 Protocolo Cachos & Crespos — Em breve! Rotina técnica para fios com curvatura.')">
-    <div class="fi">🌀</div>
+    <span class="fi">🌀</span>
     <div class="fn">Protocolo Cachos & Crespos</div>
     <div class="fd">Rotina técnica para fios com curvatura — baixa a alta porosidade</div>
   </div>
-  <div class="fc" onclick="toast2('📋 Meu Protocolo de Cuidados — Em breve! Salve e organize seus produtos favoritos.')">
-    <div class="fi">📋</div>
+  <div class="fc" onclick="toast2('📋 Meu Protocolo de Cuidados — Em breve! Organize e salve sua rotina completa.')">
+    <span class="fi">📋</span>
     <div class="fn">Meu Protocolo de Cuidados</div>
-    <div class="fd">Organize sua rotina por etapas e verifique a compatibilidade entre todos os produtos</div>
+    <div class="fd">Organize sua rotina por etapas e valide a compatibilidade entre todos os produtos</div>
   </div>
-  <div class="fc" onclick="toast2('🛡️ Verificação Regulatória ANVISA — Em breve! Consulte se o produto está regularizado conforme a legislação brasileira.')">
-    <div class="fi">🛡️</div>
+  <div class="fc" onclick="toast2('🛡️ Verificação Regulatória ANVISA — Em breve! Consulte a regularização do produto no Brasil.')">
+    <span class="fi">🛡️</span>
     <div class="fn">Verificação Regulatória ANVISA</div>
     <div class="fd">Conformidade com a legislação cosmética brasileira</div>
   </div>
 </div>
 
-<!-- DESTAQUE PARCEIRO -->
+<!-- INCI CTA (NEW) -->
+<div class="inci-cta" onclick="openModal('inciModal')">
+  <div class="inci-cta-text">
+    <h3>Decodificador de Ingredientes INCI</h3>
+    <p>Saiba exatamente o que cada ingrediente faz na sua pele. Função, segurança e modo de ação — em português.</p>
+  </div>
+  <div class="inci-cta-arrow">→</div>
+</div>
+
+<!-- DESTAQUE -->
 <div class="dest">
-  <div class="sec-label" style="margin-bottom:3px">⭐ Parceiro em Destaque</div>
+  <div class="sec-label" style="margin-bottom:4px">⭐ Parceiro em Destaque</div>
   <div class="dest-tag">PATROCINADO</div>
   <div class="dest-inner">
-    <div style="font-size:2.4rem">🧴</div>
+    <div style="font-size:2.2rem">🧴</div>
     <div style="flex:1">
-      <div style="font-weight:700;font-size:.92rem;margin-bottom:3px">Hydro Boost Neutrogena</div>
-      <div style="font-size:.75rem;color:var(--muted);margin-bottom:9px">Índice de compatibilidade de 94% com as principais bases do mercado</div>
-      <div style="display:flex;align-items:center;gap:8px">
-        <span style="font-weight:700;color:var(--primary)">R$ 49,90</span>
+      <div style="font-weight:600;font-size:.9rem;margin-bottom:3px">Hydro Boost Neutrogena</div>
+      <div style="font-size:.72rem;color:var(--muted);margin-bottom:10px">Índice de compatibilidade de 94% com as principais bases do mercado</div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="font-weight:600;color:var(--primary);font-family:var(--font-serif)">R$ 49,90</span>
         <a href="https://www.amazon.com.br/s?k=neutrogena+hydro+boost&tag=giohnne-20" target="_blank"
-          style="background:var(--primary);color:#fff;padding:6px 13px;border-radius:7px;font-size:.72rem;font-weight:700">Ver na Amazon →</a>
+          style="background:var(--dark);color:var(--white);padding:7px 14px;font-size:.7rem;font-weight:600;letter-spacing:.5px">Ver na Amazon →</a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SUGESTOES -->
-<div class="sec-label">Produtos em Destaque 🔥</div>
-<div class="ps" id="ps"><!-- js --></div>
+<!-- PRODUCTS SCROLL -->
+<div class="sec-label">Produtos em Destaque</div>
+<div class="ps" id="ps"></div>
 
 <!-- RANKING -->
-<div class="sec-label" style="margin-top:20px">🏆 Pares de Alta Compatibilidade</div>
+<div class="sec-label" style="margin-top:22px">🏆 Pares de Alta Compatibilidade</div>
 <div id="rankList">
-  <div class="rank-item"><div class="rank-n">1</div><div style="flex:1"><div style="font-size:.85rem;font-weight:600">Sérum Vitamina C + Protetor Solar</div><div style="font-size:.72rem;color:var(--muted)">Skincare · 98% de compatibilidade</div><div class="rank-bar"><div class="rank-fill" style="width:98%"></div></div></div></div>
-  <div class="rank-item"><div class="rank-n">2</div><div style="flex:1"><div style="font-size:.85rem;font-weight:600">Primer + Base Mate</div><div style="font-size:.72rem;color:var(--muted)">Maquiagem · 96% de compatibilidade</div><div class="rank-bar"><div class="rank-fill" style="width:96%"></div></div></div></div>
-  <div class="rank-item"><div class="rank-n">3</div><div style="flex:1"><div style="font-size:.85rem;font-weight:600">Shampoo Low Poo + Leave-in Cachos</div><div style="font-size:.72rem;color:var(--muted)">Cabelos · 95% de compatibilidade</div><div class="rank-bar"><div class="rank-fill" style="width:95%"></div></div></div></div>
-  <div class="rank-item"><div class="rank-n">4</div><div style="flex:1"><div style="font-size:.85rem;font-weight:600">Niacinamida + Hidratante Levinho</div><div style="font-size:.72rem;color:var(--muted)">Skincare · 93% de compatibilidade</div><div class="rank-bar"><div class="rank-fill" style="width:93%"></div></div></div></div>
+  <div class="rank-item"><div class="rank-n">1</div><div style="flex:1"><div style="font-size:.84rem;font-weight:600">Sérum Vitamina C + Protetor Solar</div><div style="font-size:.7rem;color:var(--muted);margin-bottom:4px">Skincare · 98% de compatibilidade</div><div class="rank-bar"><div class="rank-fill" style="width:98%"></div></div></div></div>
+  <div class="rank-item"><div class="rank-n">2</div><div style="flex:1"><div style="font-size:.84rem;font-weight:600">Primer + Base Mate</div><div style="font-size:.7rem;color:var(--muted);margin-bottom:4px">Maquiagem · 96% de compatibilidade</div><div class="rank-bar"><div class="rank-fill" style="width:96%"></div></div></div></div>
+  <div class="rank-item"><div class="rank-n">3</div><div style="flex:1"><div style="font-size:.84rem;font-weight:600">Shampoo Low Poo + Leave-in Cachos</div><div style="font-size:.7rem;color:var(--muted);margin-bottom:4px">Cabelos · 95% de compatibilidade</div><div class="rank-bar"><div class="rank-fill" style="width:95%"></div></div></div></div>
+  <div class="rank-item"><div class="rank-n">4</div><div style="flex:1"><div style="font-size:.84rem;font-weight:600">Niacinamida + Ácido Hialurônico</div><div style="font-size:.7rem;color:var(--muted);margin-bottom:4px">Skincare · 93% de compatibilidade</div><div class="rank-bar"><div class="rank-fill" style="width:93%"></div></div></div></div>
 </div>
 
-<!-- DICAS -->
-<div class="sec-label" style="margin-top:20px">🌿 Orientações Técnicas de Formulação</div>
+<!-- INCOMPATIBILITY ALERTS (NEW) -->
+<div class="sec-label" style="margin-top:22px">⚠️ Conflitos de Formulação Conhecidos</div>
+<div class="conflict-grid">
+  <div class="conflict-item">
+    <div class="conflict-icon">🚫</div>
+    <div>
+      <div class="conflict-pair">Retinol + Ácido Glicólico (AHA)</div>
+      <div class="conflict-reason">Ambos promovem renovação celular intensa. Usados juntos aumentam o risco de irritação cutânea, descamação e fotossensibilidade. Use em dias alternados ou em horários separados.</div>
+    </div>
+  </div>
+  <div class="conflict-item">
+    <div class="conflict-icon">🚫</div>
+    <div>
+      <div class="conflict-pair">Retinol + Vitamina C (mesmo momento)</div>
+      <div class="conflict-reason">A Vitamina C é instável em pH alcalino e o Retinol perde eficácia em pH ácido. A combinação simultânea compromete ambos os ativos. Protocolo recomendado: Vitamina C (manhã) — Retinol (noite).</div>
+    </div>
+  </div>
+  <div class="conflict-item">
+    <div class="conflict-icon">⚠️</div>
+    <div>
+      <div class="conflict-pair">Duas Proteínas Capilares (mesmo dia)</div>
+      <div class="conflict-reason">Queratina + Colágeno ou Seda aplicados juntos causam sobrecarga proteica nos fios, resultando em frizz, rigidez e opacidade. Alterne conforme o cronograma capilar semanal.</div>
+    </div>
+  </div>
+  <div class="conflict-item">
+    <div class="conflict-icon">⚠️</div>
+    <div>
+      <div class="conflict-pair">Avobenzone + Octinoxate (longa exposição)</div>
+      <div class="conflict-reason">A Avobenzona é fotolábil e pode ser degradada pelo Octinoxato sob exposição solar prolongada, reduzindo a proteção UVA. Prefira formulações com estabilizadores como Tinosorb S.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TIPS -->
+<div class="sec-label" style="margin-top:22px">🌿 Orientações Técnicas de Formulação</div>
 <div class="tip"><div class="tii">⚠️</div><div><div class="tit">Retinol + Vitamina C: incompatibilidade de pH e oxidação</div><div class="tid">A Vitamina C exige pH ácido (2,5–3,5) e o Retinol é fotossensível. Usá-los simultaneamente compromete a estabilidade de ambos e aumenta o risco de irritação cutânea. Recomendação: Vitamina C na rotina matinal, Retinol na rotina noturna.</div></div></div>
 <div class="tip"><div class="tii">💧</div><div><div class="tit">Niacinamida + Ácido Hialurônico: sinergia de alta compatibilidade</div><div class="tid">Combinação de alta compatibilidade físico-química: a niacinamida regula a oleosidade e os poros enquanto o ácido hialurônico promove hidratação profunda, sem interação adversa entre os ativos. Indicada para todos os biotipos cutâneos.</div></div></div>
 <div class="tip"><div class="tii">🌀</div><div><div class="tit">Cronograma capilar: proteína versus hidratação</div><div class="tid">Nunca aplique dois produtos proteicos simultaneamente — pode causar sobrecarga de proteína nos fios. Alterne as etapas semanais: proteína → umectação → hidratação, respeitando a porosidade capilar.</div></div></div>
-<div class="tip"><div class="tii">☀️</div><div><div class="tit">Filtro solar: última etapa obrigatória da rotina matinal</div><div class="tid">O filtro solar deve ser aplicado após todos os outros produtos, pois sua eficácia fotoprotetora depende da formação de um filme contínuo sobre a pele. Aplicá-lo antes de outros produtos compromete o FPS declarado na embalagem.</div></div></div>
+<div class="tip"><div class="tii">☀️</div><div><div class="tit">Filtro solar: última etapa obrigatória da rotina matinal</div><div class="tid">O filtro solar deve ser aplicado após todos os outros produtos, pois sua eficácia fotoprotetora depende da formação de um filme contínuo sobre a pele. Aplicá-lo antes de outros produtos compromete o FPS declarado.</div></div></div>
 
-<!-- IDÉIAS DE MONETIZAÇÃO -->
-<div class="sec-label" style="margin-top:20px">💰 Transparência — como mantemos o GiohnneBeautyMatch gratuito</div>
+<!-- MONETIZATION -->
+<div class="sec-label" style="margin-top:22px">💰 Transparência — como mantemos o Giohnne BeautyMatch gratuito</div>
 <div class="money-grid">
-  <div class="money-card"><div class="mc-icon">🔗</div><div class="mc-title">Links Afiliados</div><div class="mc-desc">Recebemos comissão por indicação quando você realiza uma compra — sem custo adicional para você (Amazon, Shopee, Magalu)</div></div>
+  <div class="money-card"><div class="mc-icon">🔗</div><div class="mc-title">Links Afiliados</div><div class="mc-desc">Recebemos comissão por indicação quando você realiza uma compra — sem custo adicional (Amazon, Shopee, Magalu)</div></div>
   <div class="money-card"><div class="mc-icon">⭐</div><div class="mc-title">Marca Parceira</div><div class="mc-desc">Parcerias comerciais com marcas selecionadas — sempre identificadas como conteúdo patrocinado</div></div>
   <div class="money-card"><div class="mc-icon">👑</div><div class="mc-title">Plano Premium</div><div class="mc-desc">Acesso completo a protocolos ilimitados, alertas de incompatibilidade e diagnóstico cutâneo avançado</div></div>
-  <div class="money-card"><div class="mc-icon">📦</div><div class="mc-title">Kit Curado</div><div class="mc-desc">Kits com produtos de alta compatibilidade, selecionados com base em parâmetros técnicos de formulação</div></div>
+  <div class="money-card"><div class="mc-icon">📦</div><div class="mc-title">Kit Curado</div><div class="mc-desc">Kits com produtos de alta compatibilidade selecionados com base em parâmetros técnicos de formulação</div></div>
 </div>
 
 <!-- NEWSLETTER -->
 <div class="nl">
-  <h3>💌 Receba conteúdo técnico de cosmetologia aplicada</h3>
+  <h3>Receba conteúdo técnico de cosmetologia aplicada</h3>
   <p>Toda semana: análises de compatibilidade, ingredientes em destaque e novidades do mercado cosmético brasileiro — sem custo.</p>
   <div class="nlf">
     <input type="email" class="nli" id="nlemail" placeholder="seu@email.com.br">
@@ -352,48 +757,118 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:22px 2
 
 </main>
 
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
 <footer>
-  <div class="fl">GiohnneBeautyMatch 🇧🇷</div>
-  <div class="ft">
-    Desenvolvido para consumidoras e profissionais do mercado cosmético brasileiro · Análises baseadas em parâmetros técnicos de química cosmética<br>
-    As informações disponibilizadas têm caráter educacional e não substituem avaliação dermatológica, tricológica ou de profissional habilitado<br>
-    <span style="color:var(--primary)">🔗 Links identificados são afiliados e contribuem para manter a plataforma gratuita</span>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="fl">Giohnne BeautyMatch</div>
+      <p>Desenvolvido para consumidoras e profissionais do mercado cosmético brasileiro. Análises baseadas em parâmetros técnicos de química cosmética.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Plataforma</h4>
+      <ul>
+        <li><a onclick="openModal('termsModal')">Termos de Uso</a></li>
+        <li><a onclick="openModal('privacyModal')">Política de Privacidade</a></li>
+        <li><a onclick="openModal('apiModal')">API Docs</a></li>
+        <li><a onclick="openModal('featureModal')">Solicitar Funcionalidade</a></li>
+        <li><a onclick="openModal('bugModal')">Reportar um Problema</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="ft">
+      As informações disponibilizadas têm caráter educacional e não substituem avaliação dermatológica, tricológica ou de profissional habilitado.<br>
+      <span class="ft-aff">🔗 Links identificados são afiliados e contribuem para manter a plataforma gratuita</span>
+    </div>
+    <div class="ft-disclaimer">
+      © 2025 Giohnne Beauty · Análises baseadas em dados INCI de domínio público · Em conformidade com ANVISA e LGPD<br>
+      Giohnne BeautyMatch não é afiliada às marcas dos produtos analisados
+    </div>
   </div>
 </footer>
 
 <script>
-// ─── PRODUTO DATABASE ───────────────────────────────────────
+// ─── PRODUTO DATABASE ──────────────────────────────────────
 const DB=[
-  {id:1,e:"💧",n:"Hidratante Nivea Creme",m:"Nivea",cat:"skincare",sub:"Hidratante",p:"R$ 12,90",i:["Aqua","Mineral Oil","Glycerin","Microcrystalline Wax","Lanolin Alcohol","Paraffin","Panthenol","Citric Acid"]},
-  {id:2,e:"💦",n:"Hydro Boost Neutrogena",m:"Neutrogena",cat:"skincare",sub:"Hidratante",p:"R$ 49,90",i:["Aqua","Dimethicone","Glycerin","Hyaluronic Acid","Phenoxyethanol","Carbomer","Sodium Hydroxide"]},
-  {id:3,e:"🌟",n:"Sérum Vitamina C FaceD",m:"Face D",cat:"skincare",sub:"Sérum",p:"R$ 38,90",i:["Aqua","Ascorbic Acid","Glycerin","Niacinamide","Ferulic Acid","Panthenol","Citric Acid"]},
-  {id:4,e:"☀️",n:"Protetor Solar Episol FPS60",m:"Mantecorp",cat:"skincare",sub:"Protetor Solar",p:"R$ 55,90",i:["Aqua","Avobenzone","Octinoxate","Tinosorb S","Glycerin","Dimethicone","Niacinamide","Tocopherol"]},
-  {id:5,e:"🌙",n:"Retinol 0.3% The Ordinary",m:"The Ordinary",cat:"skincare",sub:"Sérum Retinol",p:"R$ 79,90",i:["Caprylic/Capric Triglyceride","Retinol","Simmondsia Chinensis Seed Oil","BHT"]},
-  {id:6,e:"✨",n:"Sérum Niacinamida 10% Vichy",m:"Vichy",cat:"skincare",sub:"Sérum",p:"R$ 89,90",i:["Aqua","Niacinamide","Zinc PCA","Glycerin","Panthenol","Hyaluronic Acid"]},
-  {id:7,e:"🌿",n:"Gel Sabonete CeraVe Hidratante",m:"CeraVe",cat:"skincare",sub:"Limpeza",p:"R$ 54,90",i:["Aqua","Glycerin","Ceramide NP","Ceramide AP","Ceramide EOP","Hyaluronic Acid","Niacinamide"]},
-  {id:8,e:"🌸",n:"Tônico Antissinais Payot",m:"Payot",cat:"skincare",sub:"Tônico",p:"R$ 42,90",i:["Aqua","Glycerin","Witch Hazel","Niacinamide","Glycolic Acid","Panthenol","Centella Asiatica"]},
-  {id:9,e:"💄",n:"Base Vult Mate HD",m:"Vult",cat:"maquiagem",sub:"Base",p:"R$ 24,90",i:["Aqua","Cyclopentasiloxane","Dimethicone","Titanium Dioxide","Glycerin","Isododecane","Talc","Niacinamide"]},
-  {id:10,e:"💋",n:"Base Fit Me Maybelline",m:"Maybelline",cat:"maquiagem",sub:"Base",p:"R$ 39,90",i:["Aqua","Dimethicone","Glycerin","Titanium Dioxide","Isododecane","Silica","Niacinamide"]},
-  {id:11,e:"🎨",n:"Base Infaillible L'Oréal",m:"L'Oréal",cat:"maquiagem",sub:"Base",p:"R$ 59,90",i:["Aqua","Isododecane","Cyclopentasiloxane","Titanium Dioxide","Glycerin","Dimethicone"]},
-  {id:12,e:"🌟",n:"Primer Matificante Ruby Rose",m:"Ruby Rose",cat:"maquiagem",sub:"Primer",p:"R$ 19,90",i:["Aqua","Cyclopentasiloxane","Dimethicone","Silica","Glycerin","Niacinamide","Hyaluronic Acid"]},
-  {id:13,e:"✨",n:"Corretivo Tracta Cobertura Total",m:"Tracta",cat:"maquiagem",sub:"Corretivo",p:"R$ 22,90",i:["Aqua","Dimethicone","Glycerin","Titanium Dioxide","Wax","Talc","Silica"]},
-  {id:14,e:"💎",n:"Setting Spray Quem Disse, Berenice?",m:"QDB",cat:"maquiagem",sub:"Fixador",p:"R$ 49,90",i:["Aqua","Glycerin","Dimethicone","Panthenol","Hyaluronic Acid","Alcohol"]},
-  {id:15,e:"🌹",n:"Blush Cremoso Eudora",m:"Eudora",cat:"maquiagem",sub:"Blush",p:"R$ 35,90",i:["Dimethicone","Cyclopentasiloxane","Glycerin","Jojoba Oil","Tocopherol","Mica"]},
-  {id:16,e:"🌊",n:"Shampoo Elseve Óleo Extraordinário",m:"L'Oréal",cat:"cabelos",sub:"Shampoo",p:"R$ 19,90",i:["Aqua","Sodium Laureth Sulfate","Cocamidopropyl Betaine","Glycerin","Argan Oil","Panthenol","Guar Hydroxypropyltrimonium Chloride"]},
-  {id:17,e:"🍃",n:"Shampoo Low Poo WNF",m:"WNF",cat:"cabelos",sub:"Shampoo Low Poo",p:"R$ 44,90",i:["Aqua","Cocamidopropyl Betaine","Sodium Cocoamphoacetate","Glycerin","Panthenol","Hydrolyzed Wheat Protein","Aloe Vera"]},
-  {id:18,e:"🌀",n:"Leave-in Meu Cacho Minha Vida Lola",m:"Lola Cosmetics",cat:"cabelos",sub:"Leave-in",p:"R$ 29,90",i:["Aqua","Cetearyl Alcohol","Behentrimonium Chloride","Glycerin","Hydrolyzed Wheat Protein","Panthenol","Aloe Vera","Argan Oil"]},
-  {id:19,e:"🍃",n:"Máscara Bomba Crescimento Salon Line",m:"Salon Line",cat:"cabelos",sub:"Máscara",p:"R$ 18,90",i:["Aqua","Cetearyl Alcohol","Behentrimonium Chloride","Hydrolyzed Keratin","Glycerin","Collagen","Panthenol"]},
-  {id:20,e:"💎",n:"Óleo Capilar Argan Wella",m:"Wella",cat:"cabelos",sub:"Óleo Capilar",p:"R$ 89,90",i:["Cyclopentasiloxane","Dimethicone","Argania Spinosa Kernel Oil","Parfum","Tocopherol"]},
-  {id:21,e:"🌸",n:"Co-Wash Lola Cosmetics",m:"Lola Cosmetics",cat:"cabelos",sub:"Co-Wash",p:"R$ 26,90",i:["Aqua","Cetearyl Alcohol","Behentrimonium Chloride","Glycerin","Hydrolyzed Silk","Panthenol","Aloe Vera"]},
-  {id:22,e:"🌿",n:"Máscara Proteína Novex",m:"Novex",cat:"cabelos",sub:"Máscara Proteína",p:"R$ 22,90",i:["Aqua","Cetearyl Alcohol","Hydrolyzed Keratin","Hydrolyzed Collagen","Behentrimonium Chloride","Glycerin"]},
-  {id:23,e:"💆",n:"Condicionador Seda Hidra Cachos",m:"Seda",cat:"cabelos",sub:"Condicionador",p:"R$ 14,90",i:["Aqua","Cetearyl Alcohol","Behentrimonium Methosulfate","Glycerin","Panthenol","Hydrolyzed Keratin","Aloe Vera"]},
-  {id:24,e:"🫧",n:"Shampoo Bomba Lola Cosmetics",m:"Lola Cosmetics",cat:"cabelos",sub:"Shampoo",p:"R$ 24,90",i:["Aqua","Sodium Laureth Sulfate","Cocamidopropyl Betaine","Panthenol","Castor Oil","Glycerin","Biotin"]},
+  {id:1,e:"💧",n:"Hidratante Nivea Creme",m:"Nivea",cat:"skincare",sub:"Hidratante",p:"R$ 12,90",concerns:["hidratacao"],i:["Aqua","Mineral Oil","Glycerin","Microcrystalline Wax","Lanolin Alcohol","Paraffin","Panthenol","Citric Acid"]},
+  {id:2,e:"💦",n:"Hydro Boost Neutrogena",m:"Neutrogena",cat:"skincare",sub:"Hidratante",p:"R$ 49,90",concerns:["hidratacao"],i:["Aqua","Dimethicone","Glycerin","Hyaluronic Acid","Phenoxyethanol","Carbomer","Sodium Hydroxide"]},
+  {id:3,e:"🌟",n:"Sérum Vitamina C FaceD",m:"Face D",cat:"skincare",sub:"Sérum",p:"R$ 38,90",concerns:["manchas","antiidade"],i:["Aqua","Ascorbic Acid","Glycerin","Niacinamide","Ferulic Acid","Panthenol","Citric Acid"]},
+  {id:4,e:"☀️",n:"Protetor Solar Episol FPS60",m:"Mantecorp",cat:"skincare",sub:"Protetor Solar",p:"R$ 55,90",concerns:["antiidade","manchas"],i:["Aqua","Avobenzone","Octinoxate","Tinosorb S","Glycerin","Dimethicone","Niacinamide","Tocopherol"]},
+  {id:5,e:"🌙",n:"Retinol 0.3% The Ordinary",m:"The Ordinary",cat:"skincare",sub:"Sérum Retinol",p:"R$ 79,90",concerns:["antiidade"],i:["Caprylic/Capric Triglyceride","Retinol","Simmondsia Chinensis Seed Oil","BHT"]},
+  {id:6,e:"✨",n:"Sérum Niacinamida 10% Vichy",m:"Vichy",cat:"skincare",sub:"Sérum",p:"R$ 89,90",concerns:["acne","oleosidade","manchas"],i:["Aqua","Niacinamide","Zinc PCA","Glycerin","Panthenol","Hyaluronic Acid"]},
+  {id:7,e:"🌿",n:"Gel Sabonete CeraVe Hidratante",m:"CeraVe",cat:"skincare",sub:"Limpeza",p:"R$ 54,90",concerns:["hidratacao"],i:["Aqua","Glycerin","Ceramide NP","Ceramide AP","Ceramide EOP","Hyaluronic Acid","Niacinamide"]},
+  {id:8,e:"🌸",n:"Tônico Antissinais Payot",m:"Payot",cat:"skincare",sub:"Tônico",p:"R$ 42,90",concerns:["antiidade","manchas","acne"],i:["Aqua","Glycerin","Witch Hazel","Niacinamide","Glycolic Acid","Panthenol","Centella Asiatica"]},
+  {id:9,e:"💄",n:"Base Vult Mate HD",m:"Vult",cat:"maquiagem",sub:"Base",p:"R$ 24,90",concerns:["oleosidade"],i:["Aqua","Cyclopentasiloxane","Dimethicone","Titanium Dioxide","Glycerin","Isododecane","Talc","Niacinamide"]},
+  {id:10,e:"💋",n:"Base Fit Me Maybelline",m:"Maybelline",cat:"maquiagem",sub:"Base",p:"R$ 39,90",concerns:["oleosidade"],i:["Aqua","Dimethicone","Glycerin","Titanium Dioxide","Isododecane","Silica","Niacinamide"]},
+  {id:11,e:"🎨",n:"Base Infaillible L'Oréal",m:"L'Oréal",cat:"maquiagem",sub:"Base",p:"R$ 59,90",concerns:[],i:["Aqua","Isododecane","Cyclopentasiloxane","Titanium Dioxide","Glycerin","Dimethicone"]},
+  {id:12,e:"🌟",n:"Primer Matificante Ruby Rose",m:"Ruby Rose",cat:"maquiagem",sub:"Primer",p:"R$ 19,90",concerns:["oleosidade","acne"],i:["Aqua","Cyclopentasiloxane","Dimethicone","Silica","Glycerin","Niacinamide","Hyaluronic Acid"]},
+  {id:13,e:"✨",n:"Corretivo Tracta Cobertura Total",m:"Tracta",cat:"maquiagem",sub:"Corretivo",p:"R$ 22,90",concerns:[],i:["Aqua","Dimethicone","Glycerin","Titanium Dioxide","Wax","Talc","Silica"]},
+  {id:14,e:"💎",n:"Setting Spray Quem Disse, Berenice?",m:"QDB",cat:"maquiagem",sub:"Fixador",p:"R$ 49,90",concerns:["hidratacao"],i:["Aqua","Glycerin","Dimethicone","Panthenol","Hyaluronic Acid","Alcohol"]},
+  {id:15,e:"🌹",n:"Blush Cremoso Eudora",m:"Eudora",cat:"maquiagem",sub:"Blush",p:"R$ 35,90",concerns:[],i:["Dimethicone","Cyclopentasiloxane","Glycerin","Jojoba Oil","Tocopherol","Mica"]},
+  {id:16,e:"🌊",n:"Shampoo Elseve Óleo Extraordinário",m:"L'Oréal",cat:"cabelos",sub:"Shampoo",p:"R$ 19,90",concerns:["cachos"],i:["Aqua","Sodium Laureth Sulfate","Cocamidopropyl Betaine","Glycerin","Argan Oil","Panthenol","Guar Hydroxypropyltrimonium Chloride"]},
+  {id:17,e:"🍃",n:"Shampoo Low Poo WNF",m:"WNF",cat:"cabelos",sub:"Shampoo Low Poo",p:"R$ 44,90",concerns:["cachos"],i:["Aqua","Cocamidopropyl Betaine","Sodium Cocoamphoacetate","Glycerin","Panthenol","Hydrolyzed Wheat Protein","Aloe Vera"]},
+  {id:18,e:"🌀",n:"Leave-in Meu Cacho Minha Vida Lola",m:"Lola Cosmetics",cat:"cabelos",sub:"Leave-in",p:"R$ 29,90",concerns:["cachos"],i:["Aqua","Cetearyl Alcohol","Behentrimonium Chloride","Glycerin","Hydrolyzed Wheat Protein","Panthenol","Aloe Vera","Argan Oil"]},
+  {id:19,e:"🍃",n:"Máscara Bomba Crescimento Salon Line",m:"Salon Line",cat:"cabelos",sub:"Máscara",p:"R$ 18,90",concerns:["crescimento"],i:["Aqua","Cetearyl Alcohol","Behentrimonium Chloride","Hydrolyzed Keratin","Glycerin","Collagen","Panthenol"]},
+  {id:20,e:"💎",n:"Óleo Capilar Argan Wella",m:"Wella",cat:"cabelos",sub:"Óleo Capilar",p:"R$ 89,90",concerns:["cachos","hidratacao"],i:["Cyclopentasiloxane","Dimethicone","Argania Spinosa Kernel Oil","Parfum","Tocopherol"]},
+  {id:21,e:"🌸",n:"Co-Wash Lola Cosmetics",m:"Lola Cosmetics",cat:"cabelos",sub:"Co-Wash",p:"R$ 26,90",concerns:["cachos","hidratacao"],i:["Aqua","Cetearyl Alcohol","Behentrimonium Chloride","Glycerin","Hydrolyzed Silk","Panthenol","Aloe Vera"]},
+  {id:22,e:"🌿",n:"Máscara Proteína Novex",m:"Novex",cat:"cabelos",sub:"Máscara Proteína",p:"R$ 22,90",concerns:["crescimento"],i:["Aqua","Cetearyl Alcohol","Hydrolyzed Keratin","Hydrolyzed Collagen","Behentrimonium Chloride","Glycerin"]},
+  {id:23,e:"💆",n:"Condicionador Seda Hidra Cachos",m:"Seda",cat:"cabelos",sub:"Condicionador",p:"R$ 14,90",concerns:["cachos","hidratacao"],i:["Aqua","Cetearyl Alcohol","Behentrimonium Methosulfate","Glycerin","Panthenol","Hydrolyzed Keratin","Aloe Vera"]},
+  {id:24,e:"🫧",n:"Shampoo Bomba Lola Cosmetics",m:"Lola Cosmetics",cat:"cabelos",sub:"Shampoo",p:"R$ 24,90",concerns:["crescimento"],i:["Aqua","Sodium Laureth Sulfate","Cocamidopropyl Betaine","Panthenol","Castor Oil","Glycerin","Biotin"]},
 ];
 
-// ─── STATE ───────────────────────────────────────────────────
-let sel={1:null,2:null}, cat='todos', lastR=null;
+// ─── INCI GLOSSARY (NEW) ───────────────────────────────────
+const INCI_DB={
+  'Aqua':{fn:'Solvente / Veículo',seg:'verde',desc:'Água purificada — base da maioria das formulações aquosas. Essencial para diluição de ativos e ajuste de textura.'},
+  'Glycerin':{fn:'Humectante',seg:'verde',desc:'Atrai e retém água nas camadas da pele. Excelente para hidratação profunda e compatível com todos os biotipos cutâneos.'},
+  'Niacinamide':{fn:'Regulador de Oleosidade / Vitamina B3',seg:'verde',desc:'Regula a produção de sebo, minimiza poros dilatados, uniformiza o tom e fortalece a barreira cutânea. Compatível com a maioria dos ativos.'},
+  'Hyaluronic Acid':{fn:'Humectante / Preenchedor',seg:'verde',desc:'Capta até 1000x seu peso em água. Promove hidratação nas camadas superficial e profunda da pele. Adequado a todos os biotipos.'},
+  'Dimethicone':{fn:'Emoliente / Silicone',seg:'verde',desc:'Cria um filme protetor suave sobre a pele. Proporciona textura sedosa, reduz a evaporação hídrica e melhora a espalhabilidade de formulações.'},
+  'Retinol':{fn:'Ativo Anti-idade / Vitamina A',seg:'amarelo',desc:'Estimula renovação celular e produção de colágeno. Fotossensível — uso exclusivo noturno. Contraindicado durante a gestação e lactação.'},
+  'Ascorbic Acid':{fn:'Antioxidante / Vitamina C',seg:'verde',desc:'Inibe a síntese de melanina, atenua manchas e protege contra radicais livres. Instável em pH alcalino e sob luz — necessita de embalagem opaca.'},
+  'Sodium Laureth Sulfate':{fn:'Surfactante Aniônico',seg:'amarelo',desc:'Agente de limpeza e formação de espuma. Pode ressecar peles sensíveis com uso frequente. Evitar em formulações para cabelos muito porosos.'},
+  'Phenoxyethanol':{fn:'Conservante',seg:'amarelo',desc:'Conservante amplamente utilizado no mercado cosmético. Seguro nas concentrações regulamentares (máx. 1%). Evitar em produtos para bebês.'},
+  'Titanium Dioxide':{fn:'Filtro Solar Físico / Pigmento',seg:'verde',desc:'Filtro inorgânico de amplo espectro (UVA/UVB). Fotostável, seguro para peles sensíveis e opacificante em bases e corretivos.'},
+  'Panthenol':{fn:'Condicionante / Pró-vitamina B5',seg:'verde',desc:'Penetra na pele e nos fios capilares, promovendo hidratação e recuperação tecidual. Anti-inflamatório leve. Seguro para todos os biotipos.'},
+  'Ceramide NP':{fn:'Restaurador de Barreira Cutânea',seg:'verde',desc:'Lipídio fisiológico idêntico ao presente na pele. Restaura e fortalece a barreira cutânea comprometida por ressecamento ou irritação.'},
+  'Hydrolyzed Keratin':{fn:'Proteína Capilar',seg:'verde',desc:'Proteína que preenche lacunas na cutícula dos fios, reduz a porosidade e fortalece a estrutura capilar. Pode causar sobrecarga com uso excessivo.'},
+  'Argan Oil':{fn:'Emoliente / Óleo Vegetal',seg:'verde',desc:'Rico em ácidos graxos essenciais e tocoferóis. Nutre, hidrata e adiciona brilho à pele e aos cabelos. Comedogenicidade leve.'},
+  'Cetearyl Alcohol':{fn:'Emoliente / Estabilizante de Emulsão',seg:'verde',desc:'Álcool graxo de cadeia longa — não resseca. Estabiliza emulsões e melhora a textura cremosa de condicionadores e máscaras capilares.'},
+  'Glycolic Acid':{fn:'Ácido Esfoliante / AHA',seg:'amarelo',desc:'Menor ácido alfa-hidróxi, com alta penetração. Promove renovação celular e melhora a textura da pele. Fotossensibilizante — uso obrigatório de filtro solar.'},
+  'Zinc PCA':{fn:'Regulador de Oleosidade',seg:'verde',desc:'Controla a produção de sebo e possui ação antimicrobiana leve. Indicado para peles oleosas, mistas e com tendência acneica.'},
+  'Mineral Oil':{fn:'Emoliente / Oclusivo',seg:'amarelo',desc:'Forma barreira oclusiva eficaz para retenção de umidade. Pode ser comedogênico em peles acneicas ou oleosas. Uso seguro em concentrações moderadas.'},
+  'Behentrimonium Chloride':{fn:'Condicionante Catiônico',seg:'verde',desc:'Agente condicionante que neutraliza a carga negativa dos fios, reduzindo o frizz e facilitando o penteado. Essencial em condicionadores e máscaras.'},
+  'Aloe Vera':{fn:'Calmante / Hidratante',seg:'verde',desc:'Extrato com propriedades anti-inflamatórias, cicatrizantes e hidratantes. Adequado para peles sensíveis, irritadas e pós-procedimento.'},
+  'Tocopherol':{fn:'Antioxidante / Vitamina E',seg:'verde',desc:'Neutraliza radicais livres, estabiliza formulações oleosas e beneficia a barreira cutânea. Potencializa a ação da Vitamina C.'},
+  'Carbomer':{fn:'Gelificante / Estabilizante',seg:'verde',desc:'Polímero sintético que confere textura em gel. Necessita de neutralização para ativação. Seguro e amplamente utilizado em géis e séruns.'},
+  'Isododecane':{fn:'Solvente Volátil',seg:'verde',desc:'Solvente de silicone de evaporação rápida. Proporciona sensação seca, leve e não gordurosa em bases e primers de longa duração.'},
+  'Avobenzone':{fn:'Filtro Solar Orgânico UVA',seg:'verde',desc:'Filtro orgânico de amplo espectro UVA. Fotolábil — necessita de estabilizadores (Tinosorb S, Octocrylene) para manutenção da eficácia.'},
+  'Ferulic Acid':{fn:'Antioxidante Potencializador',seg:'verde',desc:'Potencializa a eficácia e estabilidade das vitaminas C e E. Possui ação fotoprotetora e anti-inflamatória próprias.'},
+  'Biotin':{fn:'Vitamina H / Fator Capilar',seg:'verde',desc:'Vitamina do complexo B essencial para a saúde dos fios. Participa da síntese de queratina e pode contribuir para o fortalecimento capilar.'},
+  'Cocamidopropyl Betaine':{fn:'Surfactante Suave / Anfótero',seg:'verde',desc:'Tensoativo derivado do óleo de coco. Suave, espumante e compatível com peles sensíveis. Reduz a irritação de outros surfactantes quando combinado.'},
+  'Silica':{fn:'Absorvente / Opacificante',seg:'verde',desc:'Absorve oleosidade superficial e melhora a textura de bases e primers. Proporciona acabamento mate e seco ao toque.'},
+  'BHT':{fn:'Antioxidante / Conservante',seg:'amarelo',desc:'Preserva a estabilidade de formulações oleosas. Uso regulamentado pela ANVISA — seguro nas concentrações permitidas (até 0,1%).'},
+  'Collagen':{fn:'Hidratante / Filmogênico',seg:'verde',desc:'A molécula de colágeno nativa não penetra na pele — ação exclusivamente superficial como filme hidratante. Colágeno hidrolisado possui maior absorção capilar.'},
+  'Hydrolyzed Collagen':{fn:'Proteína Capilar / Hidratante',seg:'verde',desc:'Versão hidrolisada do colágeno, com menor peso molecular. Penetra nos fios capilares, promovendo hidratação e resistência. Ação superficial na pele.'},
+  'Sodium Hydroxide':{fn:'Agente Neutralizante de pH',seg:'amarelo',desc:'Utilizado para ajuste de pH em formulações com carbômero e outros polímeros. Presente em concentrações mínimas nas fórmulas finais.'},
+  'Tinosorb S':{fn:'Filtro Solar Orgânico Estabilizador',seg:'verde',desc:'Filtro orgânico fotostável de amplo espectro UVA/UVB. Também estabiliza a Avobenzona, aumentando significativamente a durabilidade da proteção solar.'},
+  'Octinoxate':{fn:'Filtro Solar Orgânico UVB',seg:'amarelo',desc:'Filtro orgânico com boa absorção UVB. Pode degradar a Avobenzona quando combinado sem estabilizadores adequados. Regulamentado pela ANVISA.'},
+};
 
-// ─── INIT ────────────────────────────────────────────────────
+// ─── CONCERN MAPPING (NEW) ────────────────────────────────
+const CONCERN_INCI={
+  acne:['Niacinamide','Zinc PCA','Glycolic Acid','Salicylic Acid','Centella Asiatica'],
+  antiidade:['Retinol','Ascorbic Acid','Ferulic Acid','Collagen','Tocopherol','Glycolic Acid'],
+  hidratacao:['Hyaluronic Acid','Glycerin','Aloe Vera','Ceramide NP','Panthenol','Aqua'],
+  manchas:['Ascorbic Acid','Niacinamide','Glycolic Acid','Ferulic Acid'],
+  oleosidade:['Niacinamide','Zinc PCA','Silica','Dimethicone'],
+  cachos:['Behentrimonium Chloride','Hydrolyzed Keratin','Argan Oil','Aloe Vera','Cetearyl Alcohol'],
+  crescimento:['Biotin','Hydrolyzed Keratin','Hydrolyzed Collagen','Panthenol','Collagen'],
+};
+
+// ─── STATE ────────────────────────────────────────────────
+let sel={1:null,2:null}, cat='todos', concern='todos', lastR=null;
+
+// ─── INIT ─────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded',()=>{
   renderPS();
   document.addEventListener('click',e=>{
@@ -404,7 +879,21 @@ document.addEventListener('DOMContentLoaded',()=>{
   });
 });
 
-// ─── TAB ─────────────────────────────────────────────────────
+// ─── CONCERN FILTER (NEW) ─────────────────────────────────
+function setConcern(c,btn){
+  concern=c;
+  document.querySelectorAll('.cpill').forEach(p=>p.classList.remove('on'));
+  btn.classList.add('on');
+  resetInput(1); resetInput(2);
+}
+
+function filteredByConcern(list){
+  if(concern==='todos')return list;
+  const relevant=CONCERN_INCI[concern]||[];
+  return list.filter(p=>p.concerns.includes(concern)||p.i.some(ing=>relevant.some(r=>ing.toLowerCase().includes(r.toLowerCase()))));
+}
+
+// ─── TAB ──────────────────────────────────────────────────
 function setTab(c,btn){
   cat=c;
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
@@ -413,10 +902,11 @@ function setTab(c,btn){
 }
 
 function filtered(){
-  return cat==='todos'?DB:DB.filter(p=>p.cat===cat);
+  let base=cat==='todos'?DB:DB.filter(p=>p.cat===cat);
+  return filteredByConcern(base);
 }
 
-// ─── SEARCH ──────────────────────────────────────────────────
+// ─── SEARCH ───────────────────────────────────────────────
 function filter(n){
   const q=document.getElementById(`i${n}`).value.toLowerCase().trim();
   const dd=document.getElementById(`dd${n}`);
@@ -435,10 +925,10 @@ function openDD(n){
 
 function renderDD(dd,list,n){
   dd.innerHTML=list.length===0
-    ?`<div class="ddi" style="color:var(--muted);font-size:.85rem">Produto não encontrado 🙁</div>`
+    ?`<div class="ddi" style="color:var(--muted);font-size:.84rem;font-style:italic">Produto não encontrado para este filtro</div>`
     :list.slice(0,7).map(p=>`
       <div class="ddi" onclick="pick(${p.id},${n})">
-        <span style="font-size:1.2rem">${p.e}</span>
+        <span style="font-size:1.1rem">${p.e}</span>
         <div style="flex:1"><div class="din">${p.n}</div><div class="dib">${p.m}</div></div>
         <span class="dic">${p.sub}</span>
       </div>`).join('');
@@ -451,7 +941,7 @@ function pick(id,n){
   const inp=document.getElementById(`i${n}`);
   inp.value=''; inp.style.display='none';
   const sd=document.getElementById(`sel${n}`);
-  sd.innerHTML=`<div class="sel"><div style="display:flex;align-items:center;gap:10px"><span style="font-size:1.4rem">${p.e}</span><div><div style="font-weight:600;font-size:.88rem">${p.n}</div><div style="font-size:.72rem;color:var(--muted)">${p.m} · ${p.sub}</div></div></div><button class="selr" onclick="resetInput(${n})">✕</button></div>`;
+  sd.innerHTML=`<div class="sel"><div style="display:flex;align-items:center;gap:10px"><span style="font-size:1.3rem">${p.e}</span><div><div style="font-weight:600;font-size:.86rem">${p.n}</div><div style="font-size:.7rem;color:var(--muted)">${p.m} · ${p.sub}</div></div></div><button class="selr" onclick="resetInput(${n})">✕</button></div>`;
   sd.style.display='block';
   document.getElementById(`dd${n}`).classList.remove('on');
   ready();
@@ -471,14 +961,13 @@ function ready(){
   document.getElementById('btnck').disabled=!(sel[1]&&sel[2]);
 }
 
-// ─── CHECK ───────────────────────────────────────────────────
-const loadMsgs=["Verificando compatibilidade de formulações... 🔬","Cruzando parâmetros de ingredientes... 🧪","Processando interações físico-químicas... ✨","Preparando seu laudo de compatibilidade... 💄"];
+// ─── CHECK ────────────────────────────────────────────────
+const loadMsgs=["Verificando compatibilidade de formulações...","Cruzando parâmetros de ingredientes INCI...","Processando interações físico-químicas...","Preparando seu laudo de compatibilidade..."];
 let loadIdx=0, loadTimer;
 
 async function check(){
   const p1=sel[1],p2=sel[2];
   if(!p1||!p2)return;
-
   showLoad(true);
   loadIdx=0;
   document.getElementById('ltxt').textContent=loadMsgs[0];
@@ -492,10 +981,10 @@ async function check(){
 Realize a análise de compatibilidade físico-química entre os dois produtos cosméticos abaixo:
 
 **Produto 1:** ${p1.n} — ${p1.m} (${p1.sub})
-Ingredientes: ${p1.i.join(', ')}
+Ingredientes INCI: ${p1.i.join(', ')}
 
 **Produto 2:** ${p2.n} — ${p2.m} (${p2.sub})
-Ingredientes: ${p2.i.join(', ')}
+Ingredientes INCI: ${p2.i.join(', ')}
 
 Avalie: interação química dos ingredientes, compatibilidade de pH, estabilidade galénica, eficácia combinada, possíveis reações adversas cutâneas, adequação ao clima brasileiro e aos biotipos de pele e cabelo da mulher brasileira.
 
@@ -524,7 +1013,7 @@ Critério de índice: 90-100=Compatibilidade excelente, 70-89=Boa compatibilidad
     lastR={p1,p2,res};
     showRes(res,p1,p2);
   }catch(e){
-    toast2("❌ Erro na análise. Verifique sua conexão.");
+    toast2("Erro na análise. Verifique sua conexão.");
     console.error(e);
   }finally{
     clearInterval(loadTimer);
@@ -532,7 +1021,7 @@ Critério de índice: 90-100=Compatibilidade excelente, 70-89=Boa compatibilidad
   }
 }
 
-// ─── SHOW RESULT ─────────────────────────────────────────────
+// ─── SHOW RESULT ──────────────────────────────────────────
 function showRes(r,p1,p2){
   const pct=Math.min(100,Math.max(0,r.percentual||75));
   let em,bc;
@@ -546,24 +1035,69 @@ function showRes(r,p1,p2){
   const rb=document.getElementById('rbadge');
   rb.textContent=r.classificacao||"Análise Concluída";
   rb.className=`rbadge ${bc}`;
-
   document.getElementById('mpct').textContent=`${pct}%`;
   setTimeout(()=>document.getElementById('mfill').style.width=`${pct}%`,80);
 
   let h=`<div class="rs rs-a"><div class="rst">📝 Análise Técnica</div>${r.explicacao}</div>
          <div class="rs rs-d"><div class="rst">💡 Protocolo de Uso</div>${r.dica}</div>`;
   if(r.alerta) h+=`<div class="rs rs-w"><div class="rst">⚠️ Atenção</div>${r.alerta}</div>`;
-  if(r.melhor_momento) h+=`<div class="rs rs-m"><div class="rst">⏰ Melhor momento</div>${r.melhor_momento}</div>`;
-  if(r.publico_ideal) h+=`<div class="rs rs-p"><div class="rst">👤 Ideal para</div>${r.publico_ideal}</div>`;
-
+  if(r.melhor_momento) h+=`<div class="rs rs-m"><div class="rst">⏰ Melhor Momento</div>${r.melhor_momento}</div>`;
+  if(r.publico_ideal) h+=`<div class="rs rs-p"><div class="rst">👤 Biotipo Ideal</div>${r.publico_ideal}</div>`;
   document.getElementById('rsec').innerHTML=h;
+
+  // Semáforo de Ingredientes (NEW)
+  renderSemaforo([...p1.i,...p2.i]);
+
   const card=document.getElementById('resCard');
   card.classList.add('on');
   setTimeout(()=>card.scrollIntoView({behavior:'smooth',block:'start'}),80);
   renderPS(p1.cat);
 }
 
-// ─── PRODUCTS SCROLL ─────────────────────────────────────────
+// ─── SEMÁFORO (NEW) ───────────────────────────────────────
+function renderSemaforo(ingredients){
+  const sem=document.getElementById('semaforo');
+  const items=document.getElementById('sem-items');
+  const found=[];
+  const seen=new Set();
+  for(const ing of ingredients){
+    const key=Object.keys(INCI_DB).find(k=>k.toLowerCase()===ing.toLowerCase());
+    if(key&&!seen.has(key)){
+      seen.add(key);
+      found.push({name:key,...INCI_DB[key]});
+    }
+    if(found.length>=6)break;
+  }
+  if(found.length===0){sem.style.display='none';return;}
+  sem.style.display='block';
+  const color={verde:'sem-g',amarelo:'sem-y',vermelho:'sem-r'};
+  items.innerHTML=found.map(f=>`
+    <div class="sem-row">
+      <div class="sem-dot ${color[f.seg]||'sem-g'}"></div>
+      <div class="sem-name">${f.name}</div>
+      <div class="sem-fn">${f.fn}</div>
+    </div>`).join('');
+}
+
+// ─── INCI SEARCH (NEW) ────────────────────────────────────
+function searchINCI(){
+  const q=document.getElementById('inci-input').value.toLowerCase().trim();
+  const res=document.getElementById('inci-results');
+  if(!q){res.innerHTML='<div class="inci-empty">Digite acima para pesquisar um ingrediente</div>';return;}
+  const matches=Object.entries(INCI_DB).filter(([k])=>k.toLowerCase().includes(q)).slice(0,5);
+  if(matches.length===0){res.innerHTML='<div class="inci-empty">Ingrediente não encontrado no glossário. Tente o nome INCI completo.</div>';return;}
+  const segLabel={verde:'Seguro',amarelo:'Uso com Atenção',vermelho:'Uso Restrito'};
+  const segClass={verde:'inci-safe-g',amarelo:'inci-safe-y',vermelho:'inci-safe-r'};
+  res.innerHTML=matches.map(([name,d])=>`
+    <div class="inci-card">
+      <div class="inci-name">${name}</div>
+      <div class="inci-fn">${d.fn}</div>
+      <span class="inci-safe ${segClass[d.seg]}">${segLabel[d.seg]}</span>
+      <div class="inci-desc">${d.desc}</div>
+    </div>`).join('');
+}
+
+// ─── PRODUCTS SCROLL ──────────────────────────────────────
 function renderPS(pref=null){
   let list=pref?[...DB.filter(p=>p.cat===pref),...DB.filter(p=>p.cat!==pref)]:DB;
   document.getElementById('ps').innerHTML=list.slice(0,9).map(p=>`
@@ -576,10 +1110,30 @@ function renderPS(pref=null){
     </div>`).join('');
 }
 
-// ─── UTILS ───────────────────────────────────────────────────
+// ─── MODALS (NEW) ─────────────────────────────────────────
+function openModal(id){document.getElementById(id).classList.add('on');document.body.style.overflow='hidden';}
+function closeModal(id){document.getElementById(id).classList.remove('on');document.body.style.overflow='';}
+
+function submitFeature(){
+  const name=document.getElementById('feat-name').value;
+  const desc=document.getElementById('feat-desc').value;
+  if(!desc){toast2('Descreva a funcionalidade antes de enviar.');return;}
+  closeModal('featureModal');
+  toast2(`Obrigada${name?' '+name:''}! Sua sugestão foi registrada e será avaliada pela equipe.`);
+}
+
+function submitBug(){
+  const area=document.getElementById('bug-area').value;
+  const desc=document.getElementById('bug-desc').value;
+  if(!area||!desc){toast2('Preencha a área e a descrição do problema.');return;}
+  closeModal('bugModal');
+  toast2('Relatório enviado. Obrigada por ajudar a melhorar a plataforma!');
+}
+
+// ─── UTILS ────────────────────────────────────────────────
 function showLoad(on){document.getElementById('lov').classList.toggle('on',on);}
 
-function toast2(msg,ms=3200){
+function toast2(msg,ms=3600){
   const t=document.getElementById('toast');
   t.textContent=msg; t.classList.add('on');
   setTimeout(()=>t.classList.remove('on'),ms);
@@ -588,9 +1142,9 @@ function toast2(msg,ms=3200){
 function share(){
   if(!lastR)return;
   const{p1,p2,res}=lastR;
-  const txt=`✨ Verifiquei a compatibilidade de "${p1.n}" + "${p2.n}" no GiohnneBeautyMatch Brasil!\n\nResultado: ${res.percentual}% — ${res.classificacao}\n\nVerifique também: ${location.href}`;
-  if(navigator.share){navigator.share({title:'GiohnneBeautyMatch',text:txt});}
-  else{navigator.clipboard.writeText(txt).then(()=>toast2('✅ Copiado! Cole no Instagram, WhatsApp ou TikTok 💄'));}
+  const txt=`Verifiquei a compatibilidade de "${p1.n}" + "${p2.n}" no Giohnne BeautyMatch!\n\nResultado: ${res.percentual}% — ${res.classificacao}\n\nVerifique também: ${location.href}`;
+  if(navigator.share){navigator.share({title:'Giohnne BeautyMatch',text:txt});}
+  else{navigator.clipboard.writeText(txt).then(()=>toast2('Copiado! Cole no Instagram, WhatsApp ou TikTok.'));}
 }
 
 function save(){
@@ -598,7 +1152,7 @@ function save(){
   const saved=JSON.parse(localStorage.getItem('gbm_saves')||'[]');
   saved.unshift({...lastR,date:new Date().toLocaleDateString('pt-BR')});
   localStorage.setItem('gbm_saves',JSON.stringify(saved.slice(0,20)));
-  toast2('💾 Laudo salvo! Acesse em "Meu Protocolo de Cuidados" em breve.');
+  toast2('Laudo salvo! Acesse em "Meu Protocolo de Cuidados" em breve.');
 }
 
 function reset(){
@@ -613,8 +1167,8 @@ function openAff(name){
 
 function subscribe(){
   const v=document.getElementById('nlemail').value;
-  if(!v||!v.includes('@')){toast2('Digite um e-mail válido para continuar 😊');return;}
-  toast2(`✅ Cadastro confirmado! ${v} receberá nossas análises semanais.`);
+  if(!v||!v.includes('@')){toast2('Digite um e-mail válido para continuar.');return;}
+  toast2(`Cadastro confirmado! ${v} receberá nossas análises semanais.`);
   document.getElementById('nlemail').value='';
 }
 </script>
